@@ -24,7 +24,7 @@ const activities: Activity[] = [
     id: 3,
     title: "Law Clinic",
     description: "Hosted by Pro bono Lawyer Maintenance Law Late birth Registration Child Custody and Access Foster Care and Adoption Wills and Estates",
-    image: "/lovable-uploads/scales-of-justice.webp"
+    image: "/lovable-uploads/law-clinic.webp"
   },
   {
     id: 4,
@@ -70,7 +70,24 @@ const Activities = () => {
               <div className="h-48 overflow-hidden">
                 <img 
                   src={activity.image} 
-                  alt={activity.title} 
+                  alt={(() => {
+                    switch (activity.title) {
+                      case 'Pensioners Christmas Party':
+                        return 'Elderly community members enjoying a Christmas party with food and dancing';
+                      case 'Movie Night':
+                        return 'Families and children attending a community movie night';
+                      case 'Law Clinic':
+                        return 'Pro bono law clinic event with legal advice and support';
+                      case 'Karate':
+                        return 'Children practicing karate for confidence and coordination';
+                      case 'Food Parcels':
+                        return 'Food parcels being distributed to underprivileged families';
+                      case 'Dance Classes':
+                        return 'Community dance class encouraging creativity and fitness';
+                      default:
+                        return activity.title;
+                    }
+                  })()} 
                   className="w-full h-full object-cover transition-transform hover:scale-105"
                 />
               </div>

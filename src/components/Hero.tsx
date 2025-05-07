@@ -26,7 +26,7 @@ const Hero = () => {
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
                 src="/lovable-uploads/hero.webp" 
-                alt="Hero Image" 
+                alt="Abbaquar San Dream Centre community event" 
                 width="600" height="400"
                 className="w-full h-full object-contain bg-white p-4"
               />
