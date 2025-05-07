@@ -18,7 +18,7 @@ const Hero = () => {
               <Link to="/activities" className="bg-[#1E90FF] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all">
                 Our Activities
               </Link>
-              <Link to="#donate" className="bg-white text-abbaquar-purple px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-all">
+              <Link to="#donate" className="[#1E90FF] text-abbaquar-white px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-all">
                 Donate Now
               </Link>
             </div>
