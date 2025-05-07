@@ -20,7 +20,7 @@ const Contact = () => {
     <section id="contact" className="section-padding">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#4E2D7A]">Contact Us</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0A2647]">Contact Us</h2>
           <p className="text-lg max-w-3xl mx-auto text-black-600">
             Have questions or want to get involved? Reach out to us today.
           </p>
@@ -29,11 +29,11 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-              <h3 className="text-xl font-semibold mb-6 text-abbaquar-purple">Get in Touch</h3>
+              <h3 className="text-xl font-semibold mb-6 text-[#0A2647]">Get in Touch</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
+                  <label htmlFor="name" className="block text-black-700 mb-2">Name</label>
                   <input 
                     type="text" 
                     id="name" 
@@ -43,7 +43,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+                  <label htmlFor="email" className="block text-black-700 mb-2">Email</label>
                   <input 
                     type="email" 
                     id="email" 
@@ -53,7 +53,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-gray-700 mb-2">Message</label>
+                  <label htmlFor="message" className="block text-black-700 mb-2">Message</label>
                   <textarea 
                     id="message" 
                     rows={4} 
@@ -74,7 +74,7 @@ const Contact = () => {
           
           <div>
             <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-              <h3 className="text-xl font-semibold mb-6 text-abbaquar-purple">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-6 text-[#0A2647]">Contact Information</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -104,19 +104,19 @@ const Contact = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-6 text-abbaquar-purple">Service Times</h3>
+              <h3 className="text-xl font-semibold mb-6 text-[#0A2647]">Service Times</h3>
               
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <span className="font-medium">Monday - Friday</span>
-                  <span className="text-gray-600">8am - 5pm</span>
+                  <span className="font-medium">Monday - Thursday</span>
+                  <span className="text-gray-600">9am - 4pm</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-medium">Saturday</span>
-                  <span className="text-gray-600">9am - 2pm</span>
+                  <span className="font-medium">Friday</span>
+                  <span className="text-gray-600">10am - 2pm</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-medium">Sunday</span>
+                  <span className="font-medium">Saturday - Sunday</span>
                   <span className="text-gray-600">Closed</span>
                 </div>
               </div>
