@@ -6,13 +6,13 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#D4A017]">About Us</h2>
-            <h3 className="text-xl font-semibold mb-4 text-abbaquar-dark">The Royal House</h3>
+            <h3 className="text-xl font-semibold mb-4 text-abbaquar-black">The Royal House</h3>
             <p className="text-gray-600 mb-6">
               The Abbaquar-San Royal house is now official and recognised in Parliament. 
               This comes after President Cyril Ramaphosa announced in March that the Traditional 
               and Khoisan Leadership Act would come into effect from 1 April.
             </p>
-            <h3 className="text-xl font-semibold mb-4 text-abbaquar-dark">Community</h3>
+            <h3 className="text-xl font-semibold mb-4 text-abbaquar-black">Community</h3>
             <p className="text-gray-600 mb-6">
               We are a cultural organization geared towards assisting, uplifting and rebuilding our community. 
               As an organization our efforts lie predominately with the youth as well as the elderly within our community. 
