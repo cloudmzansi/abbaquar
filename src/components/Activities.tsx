@@ -64,7 +64,7 @@ const Activities = () => {
             educate, and empower members of our community.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {activities.slice(0, visibleActivities).map((activity, idx) => (
             <div key={activity.id} className="bg-[#0A2647] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="h-48 overflow-hidden">
