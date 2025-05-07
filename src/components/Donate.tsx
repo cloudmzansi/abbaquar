@@ -62,8 +62,8 @@ const Donate = () => {
                     type="button"
                     className={`py-3 px-4 border rounded-md transition-all ${
                       selectedAmount === amt 
-                        ? 'bg-abbaquar-purple text-white border-abbaquar-purple' 
-                        : 'border-gray-300 hover:border-abbaquar-purple'
+                        ? 'bg-[#0A2647] text-white border-[#0A2647]' 
+                        : 'border-[#0A2647] text-[#0A2647] hover:bg-[#0A2647] hover:text-white'
                     }`}
                     onClick={() => handleAmountClick(amt)}
                   >
@@ -89,7 +89,7 @@ const Donate = () => {
               
               <button 
                 type="submit" 
-                className="w-full btn-secondary"
+                className="w-full bg-[#0A2647] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all"
               >
                 Donate Now
               </button>
