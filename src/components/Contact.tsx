@@ -78,7 +78,7 @@ const Contact = () => {
               
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-abbaquar-accent mr-3 mt-1" />
+                  <MapPin className="h-6 w-6 text-[#073366] mr-3 mt-1" />
                   <div>
                     <h4 className="font-semibold">Address</h4>
                     <p className="text-gray-600">61 Gardenia Road, Wentworth, Durban, 4052</p>
@@ -86,7 +86,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <Phone className="h-6 w-6 text-abbaquar-accent mr-3 mt-1" />
+                  <Phone className="h-6 w-6 text-[#073366] mr-3 mt-1" />
                   <div>
                     <h4 className="font-semibold">Phone</h4>
                     <p className="text-gray-600">084 251 5740</p>
@@ -94,7 +94,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <Mail className="h-6 w-6 text-abbaquar-accent mr-3 mt-1" />
+                  <Mail className="h-6 w-6 text-[#073366] mr-3 mt-1" />
                   <div>
                     <h4 className="font-semibold">Email</h4>
                     <p className="text-gray-600">olivia@abbaquarsandreamcentre.co.za</p>
