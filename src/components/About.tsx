@@ -22,7 +22,7 @@ const About = () => {
           </div>
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img 
-              src="/placeholder.svg" 
+              src="/lovable-uploads/about-us.webp" 
               alt="Abbaquar Community" 
               className="w-full h-full object-cover"
             />
