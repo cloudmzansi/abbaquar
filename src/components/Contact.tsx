@@ -11,7 +11,7 @@ const Contact = () => {
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     try {
-      const response = await fetch('/contact.php', {
+      const response = await fetch('https://kdinteriors.co.za/contact.php', {
         method: 'POST',
         body: formData,
       });
