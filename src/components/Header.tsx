@@ -101,7 +101,7 @@ const Header = () => {
             <Link to="/contact" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
               Contact
             </Link>
-            <a href="/#donate" className="px-4 py-2 rounded-md font-bold bg-[#D72660] text-white text-base hover:bg-[#b81e4b] transition-colors shadow-md">
+            <a href="/#donate" className="inline-block px-4 py-2 rounded-md font-bold bg-[#D72660] text-white text-base hover:bg-[#b81e4b] transition-colors shadow-md">
               Donate
             </a>
           </nav>
