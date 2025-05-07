@@ -81,7 +81,6 @@ const Activities = () => {
             </div>
           ))}
         </div>
-        <div className="mx-auto w-24 h-1 bg-[#D72660] rounded mt-8" />
       </div>
     </section>
   );
