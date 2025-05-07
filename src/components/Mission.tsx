@@ -6,7 +6,7 @@ const Mission = () => {
     <section id="mission" className="bg-abbaquar-light section-padding">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-abbaquar-purple">Our Mission</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#9654b2]">Our Mission</h2>
           <p className="text-lg max-w-3xl mx-auto text-gray-600">
             We aim to create a safe haven for our youth, getting them off the streets; creating a place where we can help 
             our youth achieve their dreams; to uplift our youth and empower them with various skills development programs; 
