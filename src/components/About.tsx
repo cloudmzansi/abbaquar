@@ -22,7 +22,7 @@ const About = () => {
             </p>
             <a href="https://abbaquar.netlify.app/about-us" className="bg-[#CC8B1F] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all inline-block">Learn More</a>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-xl">
+          <div className="rounded-lg overflow-hidden shadow-xl bg-white">
             <img 
               src="/lovable-uploads/about-us.webp" 
               alt="Abbaquar Community" 
