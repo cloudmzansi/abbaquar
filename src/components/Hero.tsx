@@ -15,7 +15,7 @@ const Hero = () => {
               We invite you to come just as you are and be part of this community.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link to="/activities" className="bg-abbaquar-purple text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all">
+              <Link to="/activities" className="bg-[#1E90FF] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all">
                 Our Activities
               </Link>
               <Link to="#donate" className="bg-white text-abbaquar-purple px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-all">
