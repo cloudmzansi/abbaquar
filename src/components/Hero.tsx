@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
@@ -18,9 +17,9 @@ const Hero = () => {
               <Link to="/activities" className="bg-[#0A2647] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all">
                 Our Activities
               </Link>
-              <Link to="#donate" className="bg-white text-[#0A2647] px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-all">
+              <a href="/#donate" className="bg-[#D72660] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all text-center">
                 Donate Now
-              </Link>
+              </a>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
