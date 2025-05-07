@@ -43,7 +43,7 @@ const activities: Activity[] = [
     id: 6,
     title: "Dance Classes",
     description: "Hosted by the Dream Centre. Builds confidence and creativity. Improves physical fitness and coordination. Encourages self-expression through movement.",
-    image: "/placeholder.svg"
+    image: "/lovable-uploads/dance-classes.jpg"
   }
 ];
 
