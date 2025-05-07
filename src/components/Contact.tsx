@@ -92,7 +92,14 @@ const Contact = () => {
                     <p className="text-gray-600">084 251 5740</p>
                   </div>
                 </div>
-              
+                
+                <div className="flex items-start">
+                  <Mail className="h-6 w-6 text-[#073366] mr-3 mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Email</h4>
+                    <p className="text-gray-600">olivia@abbaquarsandreamcentre.co.za</p>
+                  </div>
+                </div>
               </div>
             </div>
             

@@ -20,10 +20,6 @@ const Footer = () => {
                 <Phone className="h-5 w-5 mr-2 text-abbaquar-accent" />
                 <span className="text-gray-300">084 251 5740</span>
               </div>
-              <div className="flex items-center">
-                <Mail className="h-5 w-5 mr-2 text-abbaquar-accent" />
-                <span className="text-gray-300">olivia@abbaquarsandreamcentre.co.za</span>
-              </div>
             </div>
           </div>
 
@@ -56,9 +52,9 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">Service Times</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Mon - Fri: 8am - 5pm</li>
-              <li>Saturday: 9am - 2pm</li>
-              <li>Sunday: Closed</li>
+              <li>Mon - Thu: 9am - 4pm</li>
+              <li>Friday: 10am - 2pm</li>
+              <li>Sat & Sun: Closed</li>
             </ul>
           </div>
 
@@ -83,8 +79,8 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-6">
-          <p className="text-center text-gray-400">
-            &copy; Abbaquar 2025. All Rights Reserved.
+          <p className="text-center text-white-400">
+            Copyright &copy; Abbaquar - San Dream Centre 2025. All Rights Reserved.
           </p>
         </div>
       </div>
