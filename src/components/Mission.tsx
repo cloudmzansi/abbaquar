@@ -33,7 +33,7 @@ const Mission = () => {
 
           <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
             <div className="inline-block p-3 bg-purple-100 rounded-full mb-4">
-              <Calendar className="h-8 w-8 text-[#7c00db]" />
+              <Calendar className="h-8 w-8 text-[#6811aa]" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Extramural Activities</h3>
             <p className="text-gray-600">Reintroducing extramural activities for youth development.</p>
@@ -41,7 +41,7 @@ const Mission = () => {
 
           <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
             <div className="inline-block p-3 bg-purple-100 rounded-full mb-4">
-              <Book className="h-8 w-8 text-[#7c00db]" />
+              <Book className="h-8 w-8 text-[#6811aa]" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Skills Development</h3>
             <p className="text-gray-600">Empowering youth with skills and education for a better future.</p>
