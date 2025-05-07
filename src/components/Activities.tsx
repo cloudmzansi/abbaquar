@@ -13,31 +13,31 @@ const activities: Activity[] = [
     id: 1,
     title: "Pensioners Christmas Party",
     description: "For pensioners from the community. Morning tea, with sandwiches. Activities – Dancing Competition. Lucky Draws Lunch was served.",
-    image: "/placeholder.svg"
+    image: "/lovable-uploads/pensioners-christmas-party.jpg"
   },
   {
     id: 2,
     title: "Movie Night",
     description: "It is free. Reintroduced family time. To help strengthen family bonds. Made children feel included. Help strengthen community bonds.",
-    image: "/placeholder.svg"
+    image: "/lovable-uploads/movie-night.jpg"
   },
   {
     id: 3,
     title: "Law Clinic",
     description: "Hosted by Pro bono Lawyer Maintenance Law Late birth Registration Child Custody and Access Foster Care and Adoption Wills and Estates",
-    image: "/placeholder.svg"
+    image: "/lovable-uploads/scales-of-justice.png"
   },
   {
     id: 4,
     title: "Karate",
     description: "Karate practice strengthens the mind. Develops Composure. Develops self confidence. Improves Co-Ordination. Teaches balance and co-ordination. Teaches humility and honor.",
-    image: "/placeholder.svg"
+    image: "/lovable-uploads/karate.jpeg"
   },
   {
     id: 5,
     title: "Food Parcels",
     description: "Food Parcels for the underprivileged families in the community. Basic foods were provided including vegetables and Chicken Covid pack for each family.",
-    image: "/placeholder.svg"
+    image: "/lovable-uploads/food-parcels.jpg"
   },
   {
     id: 6,
