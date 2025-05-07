@@ -21,7 +21,7 @@ const Contact = () => {
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#8B1A1A]">Contact Us</h2>
-          <p className="text-lg max-w-3xl mx-auto text-gray-600">
+          <p className="text-lg max-w-3xl mx-auto text-black-600">
             Have questions or want to get involved? Reach out to us today.
           </p>
         </div>
