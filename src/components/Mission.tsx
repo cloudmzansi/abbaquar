@@ -20,7 +20,7 @@ const Mission = () => {
               <Heart className="h-8 w-8 text-abbaquar-purple" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Safe Haven</h3>
-            <p className="text-gray-600">Creating a safe environment for the youth in our community.</p>
+            <p className="text-black-600">Creating a safe environment for the youth in our community.</p>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
