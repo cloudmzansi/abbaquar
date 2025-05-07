@@ -63,6 +63,8 @@ const Contact = () => {
                   <input 
                     type="text" 
                     id="name" 
+                    name="name"
+                    autoComplete="name"
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-abbaquar-purple"
                     required
                   />
@@ -73,6 +75,20 @@ const Contact = () => {
                   <input 
                     type="email" 
                     id="email" 
+                    name="email"
+                    autoComplete="email"
+                    className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-abbaquar-purple"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="subject" className="block text-black-700 mb-2">Subject</label>
+                  <input 
+                    type="text" 
+                    id="subject" 
+                    name="subject"
+                    autoComplete="subject"
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-abbaquar-purple"
                     required
                   />
@@ -82,6 +98,8 @@ const Contact = () => {
                   <label htmlFor="message" className="block text-black-700 mb-2">Message</label>
                   <textarea 
                     id="message" 
+                    name="message"
+                    autoComplete="off"
                     rows={4} 
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-abbaquar-purple"
                     required
