@@ -44,7 +44,7 @@ const Header = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/abbaquar-logo.webp" 
+                src="/assets/abbaquar-logo.webp" 
                 alt="Abbaquar Logo" 
                 className="h-16 mr-3"
               />

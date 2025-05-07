@@ -12,37 +12,37 @@ const activities: Activity[] = [
     id: 1,
     title: "Pensioners Christmas Party",
     description: "For pensioners from the community. Morning tea, with sandwiches. Activities – Dancing Competition. Lucky Draws Lunch was served.",
-    image: "/lovable-uploads/pensioners-christmas-party.webp"
+    image: "/assets/pensioners-christmas-party.webp"
   },
   {
     id: 2,
     title: "Movie Night",
     description: "It is free. Reintroduced family time. To help strengthen family bonds. Made children feel included. Help strengthen community bonds.",
-    image: "/lovable-uploads/movie-night.webp"
+    image: "/assets/movie-night.webp"
   },
   {
     id: 3,
     title: "Law Clinic",
     description: "Hosted by Pro bono Lawyer Maintenance Law Late birth Registration Child Custody and Access Foster Care and Adoption Wills and Estates",
-    image: "/lovable-uploads/law-clinic.webp"
+    image: "/assets/law-clinic.webp"
   },
   {
     id: 4,
     title: "Karate",
     description: "Karate practice strengthens the mind. Develops Composure. Develops self confidence. Improves Co-Ordination. Teaches balance and co-ordination. Teaches humility and honor.",
-    image: "/lovable-uploads/karate.webp"
+    image: "/assets/karate.webp"
   },
   {
     id: 5,
     title: "Food Parcels",
     description: "Food Parcels for the underprivileged families in the community. Basic foods were provided including vegetables and Chicken Covid pack for each family.",
-    image: "/lovable-uploads/food-parcels.webp"
+    image: "/assets/food-parcels.webp"
   },
   {
     id: 6,
     title: "Dance Classes",
     description: "Hosted by the Dream Centre. Builds confidence and creativity. Improves physical fitness and coordination. Encourages self-expression through movement.",
-    image: "/lovable-uploads/dance-classes.webp"
+    image: "/assets/dance-classes.webp"
   }
 ];
 
@@ -69,7 +69,7 @@ const Activities = () => {
             <div key={activity.id} className="bg-[#0A2647] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src={activity.image} 
+                  src={activity.image.replace('/lovable-uploads/', '/assets/')} 
                   alt={(() => {
                     switch (activity.title) {
                       case 'Pensioners Christmas Party':
