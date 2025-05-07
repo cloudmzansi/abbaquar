@@ -42,7 +42,7 @@ const activities: Activity[] = [
   {
     id: 6,
     title: "Dance Classes",
-    description: "Dance Classes hosted by Battalion Youth.",
+    description: "Hosted by the Dream Centre. Builds confidence and creativity. Improves physical fitness and coordination. Encourages self-expression through movement.",
     image: "/placeholder.svg"
   }
 ];
@@ -58,7 +58,7 @@ const Activities = () => {
     <section id="activities" className="section-padding">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#2a7c07]">Activities</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1E5C2A]">Activities</h2>
           <p className="text-lg max-w-3xl mx-auto text-black-600">
             Join our community and discover what we offer. We provide various activities to engage, 
             educate, and empower members of our community.
