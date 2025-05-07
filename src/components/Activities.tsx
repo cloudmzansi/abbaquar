@@ -59,7 +59,7 @@ const Activities = () => {
         <div className="text-center mb-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white">Activities</h2>
           <div className="mx-auto w-24 h-1 bg-[#D4A017] rounded mb-6" />
-          <p className="text-lg max-w-3xl mx-auto text-gray-100">
+          <p className="text-lg max-w-3xl mx-auto text-[#073366]">
             Join our community and discover what we offer. We provide various activities to engage, 
             educate, and empower members of our community.
           </p>
