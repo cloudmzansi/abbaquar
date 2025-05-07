@@ -42,13 +42,13 @@ const Header = () => {
       <div className="container-custom py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
+            <a href="/" className="flex items-center">
               <img 
                 src="/lovable-uploads/abbaquar-logo.png" 
                 alt="Abbaquar Logo" 
                 className="h-16 mr-3"
               />
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -101,7 +101,7 @@ const Header = () => {
             <Link to="/contact" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
               Contact
             </Link>
-            <a href="/#donate" className="inline-block px-4 py-2 rounded-md font-bold bg-[#D72660] text-white text-base hover:bg-[#b81e4b] transition-colors shadow-md">
+            <a href="/#donate" className="inline-block w-auto self-start px-4 py-2 rounded-md font-bold bg-[#D72660] text-white text-base hover:bg-[#b81e4b] transition-colors shadow-md">
               Donate
             </a>
           </nav>
