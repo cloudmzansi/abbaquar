@@ -13,7 +13,7 @@ const Hero = () => {
               No matter what stage, age, or season you find yourself in, Abbaquar-san Dream Centre is for you! 
               We invite you to come just as you are and be part of this community.
             </p>
-            <div className="flex flex-row flex-wrap gap-3">
+            <div className="flex flex-row flex-wrap gap-3 justify-center md:justify-start">
               <Link to="/activities" className="bg-[#0A2647] text-white px-6 py-2 text-base rounded-md font-medium hover:bg-opacity-90 transition-all">
                 Our Activities
               </Link>
