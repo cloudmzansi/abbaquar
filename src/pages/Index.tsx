@@ -16,7 +16,6 @@ const Index = () => {
         <Mission />
         <Activities />
         <About />
-        <div className="mb-12" />
         <Donate />
         <Contact />
       </main>

@@ -54,7 +54,7 @@ const Activities = () => {
   };
 
   return (
-    <section id="activities" className="section-padding">
+    <section id="activities" className="section-padding mb-16">
       <div className="container-custom">
         <div className="text-center mb-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-2 text-[#073366]">Activities</h2>
