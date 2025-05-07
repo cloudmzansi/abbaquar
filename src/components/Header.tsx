@@ -1,0 +1,87 @@
+
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  return (
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="container-custom py-4">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/abbaquar-logo.png" 
+                alt="Abbaquar Logo" 
+                className="h-16 mr-3"
+              />
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            <Link to="/" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              Home
+            </Link>
+            <Link to="/about-us" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              About Us
+            </Link>
+            <Link to="/activities" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              Activities
+            </Link>
+            <Link to="/gallery" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              Gallery
+            </Link>
+            <Link to="/#donate" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              Donate
+            </Link>
+            <Link to="/contact" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              Contact
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button className="md:hidden" onClick={toggleMobileMenu}>
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6 text-abbaquar-purple" />
+            ) : (
+              <Menu className="h-6 w-6 text-abbaquar-purple" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <nav className="md:hidden py-4 flex flex-col space-y-4">
+            <Link to="/" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              Home
+            </Link>
+            <Link to="/about-us" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              About Us
+            </Link>
+            <Link to="/activities" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              Activities
+            </Link>
+            <Link to="/gallery" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              Gallery
+            </Link>
+            <Link to="/#donate" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              Donate
+            </Link>
+            <Link to="/contact" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+              Contact
+            </Link>
+          </nav>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;
