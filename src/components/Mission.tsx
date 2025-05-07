@@ -6,7 +6,7 @@ const Mission = () => {
     <section id="mission" className="bg-abbaquar-light section-padding">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#4a2566]">Our Mission</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#6811aa]">Our Mission</h2>
           <p className="text-lg max-w-3xl mx-auto text-black-600">
             We aim to create a safe haven for our youth, getting them off the streets; creating a place where we can help 
             our youth achieve their dreams; to uplift our youth and empower them with various skills development programs; 
@@ -20,12 +20,12 @@ const Mission = () => {
               <Heart className="h-8 w-8 text-[#7c00db]" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Safe Haven</h3>
-            <p className="text-black-600">Creating a safe environment for the youth in our community.</p>
+            <p className="text-gray-600">Creating a safe environment for the youth in our community.</p>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
             <div className="inline-block p-3 bg-purple-100 rounded-full mb-4">
-              <Users className="h-8 w-8 text-[#7c00db]" />
+              <Users className="h-8 w-8 text-[#6811aa]" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Community Support</h3>
             <p className="text-gray-600">Supporting families and building stronger community bonds.</p>
