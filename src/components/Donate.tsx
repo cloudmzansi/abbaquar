@@ -89,7 +89,7 @@ const Donate = () => {
               
               <button 
                 type="submit" 
-                className="w-full bg-[#0A2647] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all"
+                className="w-full bg-[#0A284A] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all"
               >
                 Donate Now
               </button>
