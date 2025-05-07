@@ -78,7 +78,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-6">
+        <div className="border-t border-white mt-8 pt-6">
           <p className="text-center text-white-400">
             Copyright &copy; Abbaquar - San Dream Centre 2025. All Rights Reserved.
           </p>

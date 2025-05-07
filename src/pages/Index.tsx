@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Mission from "@/components/Mission";
+import UpcomingEvents from "@/components/UpcomingEvents";
 import Activities from "@/components/Activities";
 import About from "@/components/About";
 import Donate from "@/components/Donate";
@@ -14,6 +15,7 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         <Mission />
+        <UpcomingEvents />
         <Activities />
         <About />
         <Donate />
