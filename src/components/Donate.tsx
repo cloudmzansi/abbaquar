@@ -33,9 +33,11 @@ const Donate = () => {
       });
       return;
     }
-    
-    // Navigate to thank you page
-    navigate('/thank-you');
+    // Redirect to PayFast sandbox payment link
+    const payfastUrl = `https://sandbox.payfast.co.za/eng/process?merchant_id=10000100&merchant_key=46f0cd694581a` +
+      `&amount=${encodeURIComponent(amount)}` +
+      `&item_name=Abbaquar%20Donation`;
+    window.location.href = payfastUrl;
   };
 
   return (
