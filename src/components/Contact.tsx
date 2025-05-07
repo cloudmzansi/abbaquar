@@ -10,6 +10,10 @@ const Contact = () => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
+    // Debug: log all form data entries
+    for (let [key, value] of formData.entries()) {
+      console.log('FormData:', key, value);
+    }
     try {
       const response = await fetch('https://kdinteriors.co.za/contact.php', {
         method: 'POST',
