@@ -20,9 +20,9 @@ const Header = () => {
           if (currentScrollY < 50) {
             setShowHeader(true);
           } else if (currentScrollY > lastScrollY) {
-            setShowHeader(false); // scrolling down
+            setShowHeader(false);
           } else {
-            setShowHeader(true); // scrolling up
+            setShowHeader(true);
           }
           setLastScrollY(currentScrollY);
           ticking = false;

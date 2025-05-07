@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -25,11 +24,6 @@ const Contact = () => {
       title: "Message received",
       description: "Thank you for reaching out. We'll get back to you soon!",
     });
-    
-    // Clear form fields
-    const form = e.target as HTMLFormElement;
-    form.reset();
-    setAgreeToTerms(false);
   };
 
   return (
