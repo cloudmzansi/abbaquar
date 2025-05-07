@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -25,7 +24,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 items-center font-bold">
             <Link to="/" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
               Home
             </Link>
@@ -38,12 +37,12 @@ const Header = () => {
             <Link to="/gallery" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
               Gallery
             </Link>
-            <Link to="/#donate" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
-              Donate
-            </Link>
             <Link to="/contact" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
               Contact
             </Link>
+            <a href="/#donate" className="ml-4 px-6 py-2 rounded-md font-bold bg-[#D72660] text-white hover:bg-[#b81e4b] transition-colors shadow-md">
+              Donate
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -58,7 +57,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 flex flex-col space-y-4">
+          <nav className="md:hidden py-4 flex flex-col space-y-4 font-bold">
             <Link to="/" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
               Home
             </Link>
@@ -71,12 +70,12 @@ const Header = () => {
             <Link to="/gallery" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
               Gallery
             </Link>
-            <Link to="/#donate" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
-              Donate
-            </Link>
             <Link to="/contact" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
               Contact
             </Link>
+            <a href="/#donate" className="px-6 py-2 rounded-md font-bold bg-[#D72660] text-white hover:bg-[#b81e4b] transition-colors shadow-md">
+              Donate
+            </a>
           </nav>
         )}
       </div>
