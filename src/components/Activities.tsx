@@ -58,7 +58,7 @@ const Activities = () => {
     <section id="activities" className="section-padding">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#45a31d]">Activities</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#2a7c07]">Activities</h2>
           <p className="text-lg max-w-3xl mx-auto text-gray-600">
             Join Our Community and discover what we offer. We provide various activities to engage, 
             educate, and empower members of our community.
