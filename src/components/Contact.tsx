@@ -1,18 +1,41 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useRef } from 'react';
 
 const Contact = () => {
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Message received",
-      description: "Thank you for reaching out. We'll get back to you soon!",
-    });
-    // Clear form fields here if needed
     const form = e.target as HTMLFormElement;
-    form.reset();
+    const formData = new FormData(form);
+    try {
+      const response = await fetch('/contact.php', {
+        method: 'POST',
+        body: formData,
+      });
+      const result = await response.json();
+      if (result.success) {
+        toast({
+          title: 'Message sent',
+          description: "Thank you for reaching out. We'll get back to you soon!",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: 'Error',
+          description: result.error || 'Failed to send message.',
+          variant: 'destructive',
+        });
+      }
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to send message.',
+        variant: 'destructive',
+      });
+    }
   };
 
   return (
@@ -30,7 +53,7 @@ const Contact = () => {
             <div className="bg-white p-6 rounded-lg shadow-md mb-6">
               <h3 className="text-xl font-semibold mb-6 text-[#073366]">Get in Touch</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" ref={formRef}>
                 <div>
                   <label htmlFor="name" className="block text-black-700 mb-2">Name</label>
                   <input 
