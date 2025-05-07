@@ -26,8 +26,8 @@ const Hero = () => {
           <div className="md:w-1/2 flex justify-center">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="/lovable-uploads/abbaquar-logo.png" 
-                alt="Abbaquar Logo" 
+                src="/lovable-uploads/hero.png" 
+                alt="Hero Image" 
                 className="w-full h-full object-contain bg-white p-4"
               />
             </div>
