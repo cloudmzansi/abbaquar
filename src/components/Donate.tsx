@@ -40,7 +40,7 @@ const Donate = () => {
   };
 
   return (
-    <section id="donate" className="section-padding bg-[#A83771] text-white">
+    <section id="donate" className="section-padding bg-[#0A2647] text-white">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
