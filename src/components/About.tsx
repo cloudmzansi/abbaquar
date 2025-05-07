@@ -24,7 +24,7 @@ const About = () => {
           </div>
           <div className="rounded-lg overflow-hidden shadow-xl bg-white">
             <img 
-              src="/lovable-uploads/about-us.webp" 
+              src="/assets/about-us.webp" 
               alt="Abbaquar Community" 
               className="w-full h-full object-cover"
             />
