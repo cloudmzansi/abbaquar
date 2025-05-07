@@ -20,7 +20,7 @@ const Contact = () => {
     <section id="contact" className="section-padding">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0A2647]">Contact Us</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#073366]">Contact Us</h2>
           <p className="text-lg max-w-3xl mx-auto text-black-600">
             Have questions or want to get involved? Reach out to us today.
           </p>
@@ -29,7 +29,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-              <h3 className="text-xl font-semibold mb-6 text-[#0A2647]">Get in Touch</h3>
+              <h3 className="text-xl font-semibold mb-6 text-[#073366]">Get in Touch</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -74,7 +74,7 @@ const Contact = () => {
           
           <div>
             <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-              <h3 className="text-xl font-semibold mb-6 text-[#0A2647]">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-6 text-[#073366]">Contact Information</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -104,7 +104,7 @@ const Contact = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-6 text-[#0A2647]">Service Times</h3>
+              <h3 className="text-xl font-semibold mb-6 text-[#073366]">Service Times</h3>
               
               <div className="space-y-2">
                 <div className="flex justify-between">
