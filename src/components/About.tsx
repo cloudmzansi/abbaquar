@@ -18,7 +18,7 @@ const About = () => {
               As an organization our efforts lie predominately with the youth as well as the elderly within our community. 
               We offer various activities for the youth, namely Ballet, Karate, Dance, Music lessons and a Youth program.
             </p>
-            <a href="#" className="btn-primary inline-block">Learn More</a>
+            <a href="/about-us" className="bg-[#CC8B1F] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all inline-block">Learn More</a>
           </div>
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img 
