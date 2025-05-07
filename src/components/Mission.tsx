@@ -17,7 +17,7 @@ const Mission = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
           <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
             <div className="inline-block p-3 bg-purple-100 rounded-full mb-4">
-              <Heart className="h-8 w-8 text-[#7c00db]" />
+              <Heart className="h-8 w-8 text-[#6811aa]" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Safe Haven</h3>
             <p className="text-gray-600">Creating a safe environment for the youth in our community.</p>
