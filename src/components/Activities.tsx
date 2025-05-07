@@ -59,8 +59,8 @@ const Activities = () => {
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#2a7c07]">Activities</h2>
-          <p className="text-lg max-w-3xl mx-auto text-gray-600">
-            Join Our Community and discover what we offer. We provide various activities to engage, 
+          <p className="text-lg max-w-3xl mx-auto text-black-600">
+            Join our community and discover what we offer. We provide various activities to engage, 
             educate, and empower members of our community.
           </p>
         </div>
@@ -83,16 +83,7 @@ const Activities = () => {
           ))}
         </div>
 
-        {visibleActivities < activities.length && (
-          <div className="mt-12 text-center">
-            <button 
-              onClick={loadMore}
-              className="border border-abbaquar-purple text-abbaquar-purple px-6 py-2 rounded-md hover:bg-abbaquar-purple hover:text-white transition-colors"
-            >
-              Load More Activities
-            </button>
-          </div>
-        )}
+
       </div>
     </section>
   );
