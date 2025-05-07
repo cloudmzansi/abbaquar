@@ -44,11 +44,11 @@ const Donate = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Donate</h2>
-            <p className="text-xl mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Donate</h2>
+            <p className="text-lg md:text-xl mb-8">
               Support Abbaquar
             </p>
-            <p className="mb-6">
+            <p className="text-lg md:text-xl mb-6">
               A little donation goes a long way. Select an amount below or enter your desired amount.
             </p>
           </div>
