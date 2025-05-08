@@ -68,21 +68,13 @@ const Gallery = () => {
               {filteredImages.map(image => (
                 <div 
                   key={image.id} 
-                  className="bg-[#0A2647] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all"
+                  className="aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all"
                 >
-                  <div className="aspect-square overflow-hidden">
-                    <img 
-                      src={image.src} 
-                      alt={image.alt}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <p className="text-white">{image.alt}</p>
-                    <span className="inline-block mt-2 text-sm bg-[#D4A017] text-white px-3 py-1 rounded-full">
-                      {image.category}
-                    </span>
-                  </div>
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               ))}
             </div>

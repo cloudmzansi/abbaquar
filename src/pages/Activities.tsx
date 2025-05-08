@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Calendar, Upload } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
 
 interface Activity {
   id: number;
@@ -69,15 +67,6 @@ const activities: Activity[] = [
 ];
 
 const ActivitiesPage = () => {
-  const { toast } = useToast();
-
-  const handlePosterUpload = () => {
-    toast({
-      title: "Upload feature",
-      description: "In a production environment, this would open a file upload dialog to add new posters.",
-    });
-  };
-
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -90,27 +79,6 @@ const ActivitiesPage = () => {
               Join Our Community and discover what we offer. We provide various activities to engage, 
               educate, and empower members of our community.
             </p>
-          </div>
-        </section>
-
-        {/* Upload Posters Section */}
-        <section className="py-8 bg-[#0A2647]">
-          <div className="container-custom">
-            <div className="bg-[#0A2647] p-6 rounded-lg shadow-md border border-[#D4A017]">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                <div>
-                  <h2 className="text-xl font-semibold text-white">Have a poster to share?</h2>
-                  <p className="text-gray-200">Upload your event posters to share with the community</p>
-                </div>
-                <button 
-                  onClick={handlePosterUpload}
-                  className="flex items-center gap-2 bg-[#D4A017] text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition-colors"
-                >
-                  <Upload className="h-5 w-5" />
-                  Upload Poster
-                </button>
-              </div>
-            </div>
           </div>
         </section>
 
