@@ -14,41 +14,41 @@ const Mission = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {/* Safe Haven Card */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group text-center">
-            <div className="bg-[#FDE68A]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform mx-auto">
-              <Heart className="h-8 w-8 text-[#D72660]" />
+          <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg text-center">
+            <div className="bg-[#FDE68A]/20 p-4 rounded-2xl mb-4 md:mb-6 w-12 md:w-16 h-12 md:h-16 flex items-center justify-center mx-auto">
+              <Heart className="h-6 md:h-8 w-6 md:w-8 text-[#D72660]" />
             </div>
-            <h3 className="text-xl font-semibold mb-3 text-[#073366]">Safe Haven</h3>
-            <p className="text-gray-600">Creating a safe environment for the youth in our community.</p>
+            <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-[#073366]">Safe Haven</h3>
+            <p className="text-sm md:text-base text-gray-600">Creating a safe environment for the youth in our community.</p>
           </div>
 
           {/* Community Support Card */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group text-center">
-            <div className="bg-[#C4B5FD]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform mx-auto">
-              <Users className="h-8 w-8 text-[#4E2D7A]" />
+          <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg text-center">
+            <div className="bg-[#C4B5FD]/20 p-4 rounded-2xl mb-4 md:mb-6 w-12 md:w-16 h-12 md:h-16 flex items-center justify-center mx-auto">
+              <Users className="h-6 md:h-8 w-6 md:w-8 text-[#4E2D7A]" />
             </div>
-            <h3 className="text-xl font-semibold mb-3 text-[#073366]">Community Support</h3>
-            <p className="text-gray-600">Supporting families and building stronger community bonds.</p>
+            <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-[#073366]">Community Support</h3>
+            <p className="text-sm md:text-base text-gray-600">Supporting families and building stronger community bonds.</p>
           </div>
 
           {/* Extramural Activities Card */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group text-center">
-            <div className="bg-[#FCA5A5]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform mx-auto">
-              <Calendar className="h-8 w-8 text-[#D72660]" />
+          <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg text-center">
+            <div className="bg-[#FCA5A5]/20 p-4 rounded-2xl mb-4 md:mb-6 w-12 md:w-16 h-12 md:h-16 flex items-center justify-center mx-auto">
+              <Calendar className="h-6 md:h-8 w-6 md:w-8 text-[#D72660]" />
             </div>
-            <h3 className="text-xl font-semibold mb-3 text-[#073366]">Extramural Activities</h3>
-            <p className="text-gray-600">Reintroducing extramural activities for youth development.</p>
+            <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-[#073366]">Extramural Activities</h3>
+            <p className="text-sm md:text-base text-gray-600">Reintroducing extramural activities for youth development.</p>
           </div>
 
           {/* Skills Development Card */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group text-center">
-            <div className="bg-[#A7F3D0]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform mx-auto">
-              <Book className="h-8 w-8 text-[#1E5C2A]" />
+          <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg text-center">
+            <div className="bg-[#A7F3D0]/20 p-4 rounded-2xl mb-4 md:mb-6 w-12 md:w-16 h-12 md:h-16 flex items-center justify-center mx-auto">
+              <Book className="h-6 md:h-8 w-6 md:w-8 text-[#1E5C2A]" />
             </div>
-            <h3 className="text-xl font-semibold mb-3 text-[#073366]">Skills Development</h3>
-            <p className="text-gray-600">Empowering youth with skills and education for a better future.</p>
+            <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-[#073366]">Skills Development</h3>
+            <p className="text-sm md:text-base text-gray-600">Empowering youth with skills and education for a better future.</p>
           </div>
         </div>
       </div>
