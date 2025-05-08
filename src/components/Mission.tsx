@@ -16,8 +16,8 @@ const Mission = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Safe Haven Card */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group">
-            <div className="bg-[#FDE68A]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group text-center">
+            <div className="bg-[#FDE68A]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform mx-auto">
               <Heart className="h-8 w-8 text-[#D72660]" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-[#073366]">Safe Haven</h3>
@@ -25,8 +25,8 @@ const Mission = () => {
           </div>
 
           {/* Community Support Card */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group">
-            <div className="bg-[#C4B5FD]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group text-center">
+            <div className="bg-[#C4B5FD]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform mx-auto">
               <Users className="h-8 w-8 text-[#4E2D7A]" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-[#073366]">Community Support</h3>
@@ -34,8 +34,8 @@ const Mission = () => {
           </div>
 
           {/* Extramural Activities Card */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group">
-            <div className="bg-[#FCA5A5]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group text-center">
+            <div className="bg-[#FCA5A5]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform mx-auto">
               <Calendar className="h-8 w-8 text-[#D72660]" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-[#073366]">Extramural Activities</h3>
@@ -43,8 +43,8 @@ const Mission = () => {
           </div>
 
           {/* Skills Development Card */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group">
-            <div className="bg-[#A7F3D0]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group text-center">
+            <div className="bg-[#A7F3D0]/20 p-4 rounded-2xl mb-6 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform mx-auto">
               <Book className="h-8 w-8 text-[#1E5C2A]" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-[#073366]">Skills Development</h3>

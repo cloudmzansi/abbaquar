@@ -32,28 +32,13 @@ const Hero = () => {
           
           <div className="md:w-1/2">
             <div className="relative">
-              {/* Main Image */}
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img 
                   src="/assets/hero.webp" 
                   alt="Abbaquar San Dream Centre community event" 
                   width="600" height="400"
-                  className="w-full h-full object-cover bg-white p-4"
+                  className="w-full h-full object-cover"
                 />
-              </div>
-              
-              {/* Stats Card */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-lg max-w-[200px]">
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-2">
-                    <div className="flex -space-x-2">
-                      {[1, 2, 3].map((i) => (
-                        <div key={i} className="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600">Join our community</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
