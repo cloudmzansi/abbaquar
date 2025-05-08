@@ -29,7 +29,7 @@ export default defineConfig(({ mode }) => ({
       include: [/node_modules/],
     },
     optimizeDeps: {
-      include: ['swiper', 'swiper/react', 'swiper/modules', 'leaflet']
+      include: ['swiper', 'leaflet']
     }
   },
   css: {
