@@ -39,9 +39,9 @@ const Header = () => {
   return (
     <>
       <header
-        className={`bg-[#083364] z-50 transition-all duration-300 ${
+        className={`bg-[#073366] z-50 transition-all duration-300 ${
           showHeader ? 'translate-y-0' : '-translate-y-full'
-        } fixed w-full`}
+        } fixed w-full border-b border-white/10`}
         style={{ willChange: 'transform' }}
       >
         <div className="container-custom py-4">
@@ -60,7 +60,7 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center">
-              <div className="flex items-center space-x-1 px-4 border-r border-gray-500">
+              <div className="flex items-center space-x-1 px-4 border-r border-white/10">
                 <Link to="/" className="px-4 py-2 text-white hover:text-white/90 transition-all rounded-full hover:bg-white/10">
                   Home
                 </Link>
@@ -103,7 +103,7 @@ const Header = () => {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden mt-4 bg-[#083364] rounded-2xl border border-gray-700 shadow-lg">
+            <div className="md:hidden mt-4 bg-[#073366] rounded-2xl border border-white/10 shadow-lg">
               <nav className="py-4 px-4 flex flex-col space-y-2">
                 <Link to="/" className="px-4 py-2 text-white hover:text-white/90 transition-all rounded-full hover:bg-white/10 text-center">
                   Home
