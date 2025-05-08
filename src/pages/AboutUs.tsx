@@ -122,12 +122,12 @@ const AboutUs = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 divide-y-8 divide-transparent">
               {teamMembers.map((member, index) => (
-                <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all text-center p-2">
-                  <div className="aspect-square overflow-hidden">
+                <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md text-center p-2">
+                  <div className="aspect-square overflow-hidden rounded-full">
                     <img 
                       src={member.image} 
                       alt={`${member.name} - ${member.role}`}
-                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
+                      className="w-full h-full object-cover"
                       loading="lazy"
                       width="240"
                       height="240"
