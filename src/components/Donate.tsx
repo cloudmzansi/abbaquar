@@ -10,6 +10,12 @@ const Donate = () => {
 
   const predefinedAmounts = ["50.00", "100.00", "200.00", "500.00"];
 
+  const merchantId = import.meta.env.VITE_PAYFAST_MERCHANT_ID;
+  const merchantKey = import.meta.env.VITE_PAYFAST_MERCHANT_KEY;
+  const isSandbox = import.meta.env.VITE_PAYFAST_SANDBOX === 'true';
+
+  const baseUrl = isSandbox ? 'https://sandbox.payfast.co.za' : 'https://www.payfast.co.za';
+
   const handleAmountClick = (amt: string) => {
     setSelectedAmount(amt);
     setAmount(amt);
@@ -34,9 +40,11 @@ const Donate = () => {
       return;
     }
     // Redirect to PayFast sandbox payment link
-    const payfastUrl = `https://sandbox.payfast.co.za/eng/process?merchant_id=10000100&merchant_key=46f0cd694581a` +
-      `&amount=${encodeURIComponent(amount)}` +
-      `&item_name=Abbaquar%20Donation`;
+    const payfastUrl = `${baseUrl}/eng/process?merchant_id=${merchantId}&merchant_key=${merchantKey}` +
+      `&return_url=${encodeURIComponent(window.location.origin + '/thank-you')}` +
+      `&cancel_url=${encodeURIComponent(window.location.origin + '/donate')}` +
+      `&notify_url=${encodeURIComponent(window.location.origin + '/api/payfast-notify')}` +
+      `&amount=${selectedAmount}&item_name=${encodeURIComponent('Donation to Abbaquar')}`;
     window.location.href = payfastUrl;
   };
 
