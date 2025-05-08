@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-b from-[#073366] to-[#0A2647] text-gray-800 min-h-[calc(100vh-6rem)] flex items-center mt-24">
+    <section className="bg-gradient-to-b from-[#073366] to-[#0A2647] text-gray-800 min-h-screen flex items-center">
       <div className="container-custom py-16 md:py-0">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 mb-10 md:mb-0">
