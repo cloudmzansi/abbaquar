@@ -9,6 +9,10 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
     document.body.style.overflow = !mobileMenuOpen ? 'hidden' : 'auto';
@@ -65,7 +69,7 @@ const Header = () => {
         <div className="container-custom py-3">
           <nav className="flex justify-between items-center relative">
             <div className="flex items-center">
-              <Link to="/" className="flex items-center">
+              <Link to="/" className="flex items-center" onClick={scrollToTop}>
                 <img 
                   src="/assets/abbaquar-logo.webp" 
                   alt="Abbaquar Logo" 

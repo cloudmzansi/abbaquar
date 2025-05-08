@@ -8,7 +8,7 @@ const ActivitiesPage = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-[#073366] text-white py-20 mt-24">
+        <section className="bg-[#073366] text-white py-20 pt-[88px]">
           <div className="container-custom">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Our Activities</h1>
             <p className="text-xl text-center max-w-3xl mx-auto">
