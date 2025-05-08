@@ -3,12 +3,31 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { ContactFormData } from '@/types';
+import { submitContactForm } from '@/api/contact';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
 
 const Contact = () => {
   const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const validateEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     if (!agreeToTerms) {
@@ -20,10 +39,40 @@ const Contact = () => {
       return;
     }
 
-    toast({
-      title: "Message received",
-      description: "Thank you for reaching out. We'll get back to you soon!",
-    });
+    if (!validateEmail(formData.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      await submitContactForm(formData);
+      
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      
+      toast({
+        title: "Message Sent",
+        description: "Thank you for your message. We'll get back to you soon.",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -57,7 +106,10 @@ const Contact = () => {
                         <label htmlFor="name" className="block text-[#E0E9FF] mb-2">Name</label>
                         <input 
                           type="text" 
-                          id="name" 
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
                           className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4A017]"
                           required
                         />
@@ -67,7 +119,10 @@ const Contact = () => {
                         <label htmlFor="email" className="block text-[#E0E9FF] mb-2">Email</label>
                         <input 
                           type="email" 
-                          id="email" 
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
                           className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4A017]"
                           required
                         />
@@ -78,7 +133,10 @@ const Contact = () => {
                       <label htmlFor="subject" className="block text-[#E0E9FF] mb-2">Subject</label>
                       <input 
                         type="text" 
-                        id="subject" 
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
                         className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4A017]"
                         required
                       />
@@ -87,7 +145,10 @@ const Contact = () => {
                     <div>
                       <label htmlFor="message" className="block text-[#E0E9FF] mb-2">Message</label>
                       <textarea 
-                        id="message" 
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         rows={4} 
                         className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4A017]"
                         required
@@ -109,9 +170,17 @@ const Contact = () => {
                     
                     <button 
                       type="submit" 
-                      className="px-6 py-2 rounded-md font-bold bg-[#D4A017] text-white hover:bg-opacity-90 transition-colors shadow-md"
+                      className="px-6 py-2 rounded-md font-bold bg-[#D4A017] text-white hover:bg-opacity-90 transition-colors shadow-md flex items-center justify-center"
+                      disabled={isSubmitting}
                     >
-                      Send Message
+                      {isSubmitting ? (
+                        <>
+                          <LoadingSpinner size="sm" className="mr-2" />
+                          Sending...
+                        </>
+                      ) : (
+                        'Send Message'
+                      )}
                     </button>
                   </form>
                 </div>
