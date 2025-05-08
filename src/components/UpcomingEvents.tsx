@@ -54,7 +54,7 @@ const EventCard = ({ event }: { event: Event }) => (
   </div>
 );
 
-const UpcomingEvents = ({ displayOn = 'events' }: UpcomingEventsProps) => {
+const UpcomingEvents = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [events, setEvents] = useState<Event[]>([]);
 
@@ -71,13 +71,9 @@ const UpcomingEvents = ({ displayOn = 'events' }: UpcomingEventsProps) => {
     fetch('/api/events')
       .then(res => res.json())
       .then(data => {
-        if (displayOn === 'home') {
-          setEvents(data.filter((e: Event) => e.displayOn === 'home' || e.displayOn === 'both'));
-        } else {
-          setEvents(data.filter((e: Event) => e.displayOn === 'events' || e.displayOn === 'both'));
-        }
+        setEvents(data);
       });
-  }, [displayOn]);
+  }, []);
 
   return (
     <section className="py-24 bg-white">

@@ -171,13 +171,12 @@ app.get('/api/events', (req, res) => {
 });
 
 // API: Add event
-app.post('/api/events', upload.single('image'), (req, res) => {
-  const { title, date, time, venue, description, displayOn } = req.body;
-  const image = req.file ? `/uploads/${req.file.filename}` : '';
+app.post('/api/events', upload.none(), (req, res) => {
+  const { title, date, fromTime, toTime, venue, description } = req.body;
   fs.readFile(eventsFile, 'utf-8', (err, data) => {
     if (err) return res.status(500).json({ error: 'Failed to read events' });
     const events = JSON.parse(data);
-    const event = { id: Date.now(), title, date, time, venue, description, image, displayOn };
+    const event = { id: Date.now(), title, date, fromTime, toTime, venue, description };
     events.push(event);
     fs.writeFile(eventsFile, JSON.stringify(events, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to save event' });
@@ -188,14 +187,13 @@ app.post('/api/events', upload.single('image'), (req, res) => {
 });
 
 // API: Update event
-app.put('/api/events/:id', upload.single('image'), (req, res) => {
+app.put('/api/events/:id', upload.none(), (req, res) => {
   const id = Number(req.params.id);
-  const { title, date, time, venue, description, displayOn } = req.body;
-  const image = req.file ? `/uploads/${req.file.filename}` : undefined;
+  const { title, date, fromTime, toTime, venue, description } = req.body;
   fs.readFile(eventsFile, 'utf-8', (err, data) => {
     if (err) return res.status(500).json({ error: 'Failed to read events' });
     let events = JSON.parse(data);
-    events = events.map(e => e.id === id ? { ...e, title, date, time, venue, description, displayOn, image: image || e.image } : e);
+    events = events.map(e => e.id === id ? { ...e, title, date, fromTime, toTime, venue, description } : e);
     fs.writeFile(eventsFile, JSON.stringify(events, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to update event' });
       autoCommit(eventsFile, 'Update events.json via dashboard');
