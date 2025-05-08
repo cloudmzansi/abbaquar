@@ -131,11 +131,11 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div 
-        className={`fixed inset-x-0 top-0 h-screen bg-[#073366] transition-transform duration-300 ease-in-out transform md:hidden pt-20 ${
+        className={`fixed inset-x-0 top-0 bg-[#073366] transition-transform duration-300 ease-in-out transform md:hidden pt-20 ${
           mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
         } z-40`}
       >
-        <nav className="container-custom py-6 flex flex-col space-y-4 overflow-y-auto h-full">
+        <nav className="container-custom py-6 flex flex-col space-y-4">
           <Link 
             to="/" 
             className="px-4 py-3 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-lg"

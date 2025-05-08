@@ -34,9 +34,9 @@ const EventCard = ({ event }: { event: typeof events[0] }) => (
     <div className="space-y-4">
       <div className="flex items-start justify-between">
         <div className="bg-white rounded-2xl p-3 shadow-sm">
-          <Calendar className="h-6 w-6 text-[#D72660]" />
+          <Calendar className="h-6 w-6 text-[#8A4BA3]" />
         </div>
-        <span className="text-sm font-medium text-[#D72660] bg-[#D72660]/10 px-3 py-1 rounded-full">
+        <span className="text-sm font-medium text-[#8A4BA3] bg-[#8A4BA3]/10 px-3 py-1 rounded-full">
           Upcoming
         </span>
       </div>
@@ -79,7 +79,7 @@ const UpcomingEvents = () => {
     <section className="py-24 bg-white">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <span className="text-[#D72660] font-semibold mb-4 block">Join Us</span>
+          <span className="text-[#8A4BA3] font-semibold mb-4 block">Join Us</span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#073366] font-serif">Upcoming Events</h2>
           <p className="text-lg text-gray-600">
             Join our community events and make a difference. Every event is an opportunity to connect, 
