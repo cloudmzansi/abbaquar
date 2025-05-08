@@ -60,19 +60,19 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center">
             <div className="flex space-x-1 items-center rounded-full glass-effect px-6 py-2">
-              <Link to="/" className="nav-text px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+              <Link to="/" className="nav-text px-4 py-2 text-white hover:text-[#D4A017] glass-hover transition-all rounded-full">
                 Home
               </Link>
-              <Link to="/about-us" className="nav-text px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+              <Link to="/about-us" className="nav-text px-4 py-2 text-white hover:text-[#D4A017] glass-hover transition-all rounded-full">
                 About Us
               </Link>
-              <Link to="/activities" className="nav-text px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+              <Link to="/activities" className="nav-text px-4 py-2 text-white hover:text-[#D4A017] glass-hover transition-all rounded-full">
                 Activities
               </Link>
-              <Link to="/gallery" className="nav-text px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+              <Link to="/gallery" className="nav-text px-4 py-2 text-white hover:text-[#D4A017] glass-hover transition-all rounded-full">
                 Gallery
               </Link>
-              <Link to="/contact" className="nav-text px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+              <Link to="/contact" className="nav-text px-4 py-2 text-white hover:text-[#D4A017] glass-hover transition-all rounded-full">
                 Contact
               </Link>
               <a 
@@ -86,7 +86,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden rounded-full p-2 hover:bg-white/10 transition-colors glass-transition"
+            className="md:hidden rounded-full p-2 glass-hover transition-all"
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
@@ -102,19 +102,19 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 rounded-2xl glass-nav-mobile overflow-hidden">
             <nav className="py-4 px-4 flex flex-col space-y-2">
-              <Link to="/" className="nav-text px-4 py-2.5 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+              <Link to="/" className="nav-text px-4 py-2.5 text-white hover:text-[#D4A017] glass-hover transition-all rounded-full">
                 Home
               </Link>
-              <Link to="/about-us" className="nav-text px-4 py-2.5 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+              <Link to="/about-us" className="nav-text px-4 py-2.5 text-white hover:text-[#D4A017] glass-hover transition-all rounded-full">
                 About Us
               </Link>
-              <Link to="/activities" className="nav-text px-4 py-2.5 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+              <Link to="/activities" className="nav-text px-4 py-2.5 text-white hover:text-[#D4A017] glass-hover transition-all rounded-full">
                 Activities
               </Link>
-              <Link to="/gallery" className="nav-text px-4 py-2.5 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+              <Link to="/gallery" className="nav-text px-4 py-2.5 text-white hover:text-[#D4A017] glass-hover transition-all rounded-full">
                 Gallery
               </Link>
-              <Link to="/contact" className="nav-text px-4 py-2.5 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+              <Link to="/contact" className="nav-text px-4 py-2.5 text-white hover:text-[#D4A017] glass-hover transition-all rounded-full">
                 Contact
               </Link>
               <a 
