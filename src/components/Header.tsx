@@ -4,66 +4,98 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = mobileMenuOpen ? 'auto' : 'hidden';
+  };
+
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          setIsScrolled(currentScrollY > 20);
+          if (currentScrollY < 50) {
+            setShowHeader(true);
+          } else if (currentScrollY > lastScrollY) {
+            setShowHeader(false);
+          } else {
+            setShowHeader(true);
+          }
+          setLastScrollY(currentScrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      // Reset body scroll on unmount
+      document.body.style.overflow = 'auto';
+    };
+  }, [lastScrollY]);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#1B4332] shadow-lg' : 'bg-transparent'
-      }`}
+      className={`bg-[#073366] z-50 transition-all duration-300 ${
+        showHeader ? 'translate-y-0' : '-translate-y-full'
+      } fixed w-full border-b border-white/40`}
+      style={{ willChange: 'transform' }}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="container-custom py-3">
         <nav className="flex justify-between items-center">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <img
-                src="/assets/abbaquar-logo.webp"
-                alt="RaiseUp Logo"
-                className="h-12 w-12 rounded-lg"
+            <a href="/" className="flex items-center">
+              <img 
+                src="/assets/abbaquar-logo.webp" 
+                alt="Abbaquar Logo" 
+                className="h-20 mr-3 rounded-2xl" 
+                width="80" 
+                height="80" 
               />
-              <span className="ml-3 text-xl font-bold text-white">RaiseUp</span>
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-2">
-            <Link to="/" className="px-4 py-2 text-white hover:text-white/80 transition-all">
-              Home
-            </Link>
-            <Link to="/about-us" className="px-4 py-2 text-white hover:text-white/80 transition-all">
-              About Us
-            </Link>
-            <Link to="/activities" className="px-4 py-2 text-white hover:text-white/80 transition-all">
-              Activities
-            </Link>
-            <Link to="/gallery" className="px-4 py-2 text-white hover:text-white/80 transition-all">
-              Gallery
-            </Link>
-            <Link to="/contact" className="px-4 py-2 text-white hover:text-white/80 transition-all">
-              Contact
-            </Link>
-            <div className="ml-4">
-              <a
-                href="/#donate"
-                className="px-6 py-2.5 rounded-full font-medium bg-[#2D6A4F] text-white hover:bg-opacity-90 transition-all"
+          <div className="hidden md:flex items-center">
+            <div className="flex items-center space-x-1">
+              <Link to="/" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
+                Home
+              </Link>
+              <Link to="/about-us" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
+                About Us
+              </Link>
+              <Link to="/activities" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
+                Activities
+              </Link>
+              <Link to="/gallery" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
+                Gallery
+              </Link>
+              <Link to="/contact" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
+                Contact
+              </Link>
+            </div>
+            <div className="flex items-center ml-24">
+              <a 
+                href="/#donate" 
+                className="px-6 py-2.5 rounded-full font-semibold bg-[#D72660] text-white hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg active:scale-100"
               >
-                Donate Now
+                Donate
               </a>
             </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden rounded-lg p-2 hover:bg-white/10 transition-all"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          <button 
+            className="md:hidden rounded-full p-2 hover:bg-white/10 transition-all"
+            onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
             {mobileMenuOpen ? (
@@ -75,56 +107,54 @@ const Header = () => {
         </nav>
 
         {/* Mobile Menu */}
-        <div
-          className={`lg:hidden fixed inset-x-0 top-[72px] bg-[#1B4332] transition-all duration-300 ease-in-out ${
-            mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
-          }`}
-        >
-          <nav className="container mx-auto px-4 py-6 flex flex-col space-y-4">
-            <Link
-              to="/"
-              className="px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-all"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about-us"
-              className="px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-all"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About Us
-            </Link>
-            <Link
-              to="/activities"
-              className="px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-all"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Activities
-            </Link>
-            <Link
-              to="/gallery"
-              className="px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-all"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Gallery
-            </Link>
-            <Link
-              to="/contact"
-              className="px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-all"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
-            <a
-              href="/#donate"
-              className="px-6 py-2.5 rounded-full font-medium bg-[#2D6A4F] text-white hover:bg-opacity-90 transition-all text-center"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Donate Now
-            </a>
-          </nav>
-        </div>
+        {mobileMenuOpen && (
+          <div className="md:hidden fixed inset-x-0 top-[104px] bottom-0 bg-[#073366] border-t border-white/40">
+            <nav className="container-custom py-6 flex flex-col space-y-2 overflow-y-auto max-h-[calc(100vh-104px)]">
+              <Link 
+                to="/" 
+                className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-center"
+                onClick={toggleMobileMenu}
+              >
+                Home
+              </Link>
+              <Link 
+                to="/about-us" 
+                className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-center"
+                onClick={toggleMobileMenu}
+              >
+                About Us
+              </Link>
+              <Link 
+                to="/activities" 
+                className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-center"
+                onClick={toggleMobileMenu}
+              >
+                Activities
+              </Link>
+              <Link 
+                to="/gallery" 
+                className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-center"
+                onClick={toggleMobileMenu}
+              >
+                Gallery
+              </Link>
+              <Link 
+                to="/contact" 
+                className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-center"
+                onClick={toggleMobileMenu}
+              >
+                Contact
+              </Link>
+              <a 
+                href="/#donate" 
+                className="px-6 py-2.5 rounded-full font-semibold bg-[#D72660] text-white hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg active:scale-100 text-center"
+                onClick={toggleMobileMenu}
+              >
+                Donate
+              </a>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
