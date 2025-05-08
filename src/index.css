@@ -6,29 +6,6 @@
 
 @layer base {
   :root {
-    /* Brand Colors */
-    --color-primary: 7 51 102;      /* #073366 */
-    --color-primary-light: 8 38 71;  /* #082647 */
-    --color-secondary: 215 38 96;    /* #D72660 */
-    
-    /* Neutral Colors */
-    --color-neutral-50: 245 245 240;  /* #F5F5F0 */
-    --color-neutral-100: 243 244 246;
-    --color-neutral-200: 229 231 235;
-    --color-neutral-300: 209 213 219;
-    --color-neutral-400: 156 163 175;
-    --color-neutral-500: 107 114 128;
-    --color-neutral-600: 75 85 99;
-    --color-neutral-700: 55 65 81;
-    --color-neutral-800: 31 41 55;
-    --color-neutral-900: 17 24 39;
-    
-    /* Semantic Colors */
-    --color-success: 34 197 94;      /* #22C55E */
-    --color-warning: 234 179 8;      /* #EAB308 */
-    --color-error: 239 68 68;        /* #EF4444 */
-    --color-info: 59 130 246;        /* #3B82F6 */
-
     --background: 0 0% 98%;
     --foreground: 222.2 84% 4.9%;
 
@@ -124,7 +101,7 @@
 
 @layer components {
   .container-custom {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
   .section-padding {
