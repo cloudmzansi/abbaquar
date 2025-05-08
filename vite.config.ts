@@ -18,11 +18,16 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     rollupOptions: {
-      external: ['@vercel/analytics/react', '@tanstack/react-query'],
+      external: [
+        '@vercel/analytics/react',
+        '@tanstack/react-query',
+        '@radix-ui/react-tooltip'
+      ],
       output: {
         globals: {
           '@vercel/analytics/react': 'vercelAnalytics',
-          '@tanstack/react-query': 'ReactQuery'
+          '@tanstack/react-query': 'ReactQuery',
+          '@radix-ui/react-tooltip': 'RadixTooltip'
         }
       }
     },
