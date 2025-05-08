@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import './UpcomingEvents.css';
 
 const events = [
   {
@@ -94,8 +95,11 @@ const UpcomingEvents = () => {
               spaceBetween={16}
               slidesPerView={1.2}
               centeredSlides={true}
-              pagination={{ clickable: true }}
-              className="w-full"
+              pagination={{ 
+                clickable: true,
+                bulletActiveClass: 'swiper-pagination-bullet-active-purple'
+              }}
+              className="w-full events-swiper"
             >
               {events.map((event, idx) => (
                 <SwiperSlide key={idx}>
