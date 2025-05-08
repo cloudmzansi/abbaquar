@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 
 const Donate = () => {
   const [amount, setAmount] = useState("50.00");
@@ -102,10 +101,9 @@ const Donate = () => {
                 
                 <button 
                   type="submit" 
-                  className="w-full bg-[#D72660] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-opacity-90 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                  className="w-full bg-[#D72660] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-opacity-90 transition-all"
                 >
                   Donate Now
-                  <ArrowRight className="w-5 h-5" />
                 </button>
               </form>
             </div>

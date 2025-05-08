@@ -150,20 +150,22 @@ const Header = () => {
             >
               Gallery
             </Link>
-            <Link 
-              to="/contact" 
-              className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-center"
-              onClick={toggleMobileMenu}
-            >
-              Contact
-            </Link>
-            <a 
-              href="/#donate" 
-              className="px-6 py-2.5 rounded-full font-semibold bg-[#D72660] text-white hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg active:scale-100 text-center"
-              onClick={toggleMobileMenu}
-            >
-              Donate
-            </a>
+            <div className="flex gap-4 mt-2">
+              <Link 
+                to="/contact" 
+                className="flex-1 px-4 py-2.5 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-center"
+                onClick={toggleMobileMenu}
+              >
+                Contact
+              </Link>
+              <a 
+                href="/#donate" 
+                className="flex-1 px-4 py-2.5 rounded-lg font-semibold bg-[#D72660] text-white hover:bg-opacity-90 transition-all text-center"
+                onClick={toggleMobileMenu}
+              >
+                Donate
+              </a>
+            </div>
           </nav>
         </div>
       </div>

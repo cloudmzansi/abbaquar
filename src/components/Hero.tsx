@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -16,10 +15,9 @@ const Hero = () => {
             </p>
             <div className="flex flex-row flex-wrap gap-4 justify-center md:justify-start">
               <a href="/#donate" 
-                className="bg-[#D72660] text-white px-8 py-3.5 text-lg rounded-full font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg active:scale-100 flex items-center gap-2"
+                className="bg-[#D72660] text-white px-8 py-3.5 text-lg rounded-full font-semibold hover:bg-opacity-90 transition-all"
               >
                 Donate Now
-                <ArrowRight className="w-5 h-5" />
               </a>
               <Link 
                 to="/activities" 
