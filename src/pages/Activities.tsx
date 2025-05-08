@@ -94,17 +94,17 @@ const ActivitiesPage = () => {
         </section>
 
         {/* Upload Posters Section */}
-        <section className="py-8 bg-abbaquar-light">
+        <section className="py-8 bg-[#0A2647]">
           <div className="container-custom">
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-[#0A2647] p-6 rounded-lg shadow-md border border-[#D4A017]">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                 <div>
-                  <h2 className="text-xl font-semibold text-abbaquar-purple">Have a poster to share?</h2>
-                  <p className="text-gray-600">Upload your event posters to share with the community</p>
+                  <h2 className="text-xl font-semibold text-white">Have a poster to share?</h2>
+                  <p className="text-gray-200">Upload your event posters to share with the community</p>
                 </div>
                 <button 
                   onClick={handlePosterUpload}
-                  className="flex items-center gap-2 bg-abbaquar-purple text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition-colors"
+                  className="flex items-center gap-2 bg-[#D4A017] text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition-colors"
                 >
                   <Upload className="h-5 w-5" />
                   Upload Poster
@@ -117,11 +117,11 @@ const ActivitiesPage = () => {
         {/* Activities Section */}
         <section className="py-16">
           <div className="container-custom">
-            <h2 className="text-3xl font-bold mb-12 text-abbaquar-purple text-center">Featured Activities</h2>
+            <h2 className="text-3xl font-bold mb-12 text-[#0A2647] text-center">Featured Activities</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {activities.map((activity) => (
-                <div key={activity.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                <div key={activity.id} className="bg-[#0A2647] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                   <div className="h-48 overflow-hidden">
                     <img 
                       src={activity.image} 
@@ -130,8 +130,8 @@ const ActivitiesPage = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-3 text-abbaquar-dark">{activity.title}</h3>
-                    <p className="text-gray-600">{activity.description}</p>
+                    <h3 className="text-xl font-semibold mb-3 text-white">{activity.title}</h3>
+                    <p className="text-gray-200">{activity.description}</p>
                   </div>
                 </div>
               ))}
@@ -139,23 +139,23 @@ const ActivitiesPage = () => {
           </div>
         </section>
 
-        {/* Upcoming Events Section */}
-        <section className="py-16 bg-abbaquar-light">
+        {/* Impact Section */}
+        <section className="py-16 bg-[#0A2647]">
           <div className="container-custom">
-            <h2 className="text-3xl font-bold mb-12 text-abbaquar-purple text-center">Our Impact</h2>
+            <h2 className="text-3xl font-bold mb-12 text-white text-center">Our Impact</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-lg shadow-md text-center">
-                <div className="text-4xl font-bold text-abbaquar-purple mb-2">500+</div>
-                <p className="text-gray-600">Children Supported</p>
+              <div className="bg-[#0A2647] p-8 rounded-lg shadow-md text-center border border-[#D4A017]">
+                <div className="text-4xl font-bold text-[#D4A017] mb-2">500+</div>
+                <p className="text-gray-200">Children Supported</p>
               </div>
-              <div className="bg-white p-8 rounded-lg shadow-md text-center">
-                <div className="text-4xl font-bold text-abbaquar-purple mb-2">9</div>
-                <p className="text-gray-600">Regular Programs</p>
+              <div className="bg-[#0A2647] p-8 rounded-lg shadow-md text-center border border-[#D4A017]">
+                <div className="text-4xl font-bold text-[#D4A017] mb-2">9</div>
+                <p className="text-gray-200">Regular Programs</p>
               </div>
-              <div className="bg-white p-8 rounded-lg shadow-md text-center">
-                <div className="text-4xl font-bold text-abbaquar-purple mb-2">100+</div>
-                <p className="text-gray-600">Volunteer Hours Monthly</p>
+              <div className="bg-[#0A2647] p-8 rounded-lg shadow-md text-center border border-[#D4A017]">
+                <div className="text-4xl font-bold text-[#D4A017] mb-2">100+</div>
+                <p className="text-gray-200">Volunteer Hours Monthly</p>
               </div>
             </div>
           </div>

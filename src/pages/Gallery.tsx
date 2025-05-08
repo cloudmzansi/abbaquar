@@ -54,8 +54,8 @@ const Gallery = () => {
                   onClick={() => setFilter(category)}
                   className={`px-6 py-2 rounded-full transition-colors ${
                     filter === category
-                      ? 'bg-abbaquar-purple text-white'
-                      : 'bg-white text-abbaquar-dark hover:bg-gray-100'
+                      ? 'bg-[#D4A017] text-white'
+                      : 'bg-[#0A2647] text-white hover:bg-opacity-90'
                   }`}
                 >
                   {category}
@@ -68,7 +68,7 @@ const Gallery = () => {
               {filteredImages.map(image => (
                 <div 
                   key={image.id} 
-                  className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all"
+                  className="bg-[#0A2647] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all"
                 >
                   <div className="aspect-square overflow-hidden">
                     <img 
@@ -78,8 +78,8 @@ const Gallery = () => {
                     />
                   </div>
                   <div className="p-4">
-                    <p className="text-abbaquar-dark">{image.alt}</p>
-                    <span className="inline-block mt-2 text-sm bg-abbaquar-light text-abbaquar-dark px-3 py-1 rounded-full">
+                    <p className="text-white">{image.alt}</p>
+                    <span className="inline-block mt-2 text-sm bg-[#D4A017] text-white px-3 py-1 rounded-full">
                       {image.category}
                     </span>
                   </div>

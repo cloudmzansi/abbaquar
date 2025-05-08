@@ -48,48 +48,48 @@ const Contact = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Contact Form */}
               <div className="lg:col-span-2">
-                <div className="bg-white p-8 rounded-lg shadow-md">
-                  <h2 className="text-2xl font-bold mb-6 text-abbaquar-purple">Send us a message</h2>
+                <div className="bg-[#0A2647] p-8 rounded-lg shadow-md">
+                  <h2 className="text-2xl font-bold mb-6 text-white">Send us a message</h2>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
+                        <label htmlFor="name" className="block text-gray-200 mb-2">Name</label>
                         <input 
                           type="text" 
                           id="name" 
-                          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-abbaquar-purple"
+                          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4A017]"
                           required
                         />
                       </div>
                       
                       <div>
-                        <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+                        <label htmlFor="email" className="block text-gray-200 mb-2">Email</label>
                         <input 
                           type="email" 
                           id="email" 
-                          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-abbaquar-purple"
+                          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4A017]"
                           required
                         />
                       </div>
                     </div>
                     
                     <div>
-                      <label htmlFor="subject" className="block text-gray-700 mb-2">Subject</label>
+                      <label htmlFor="subject" className="block text-gray-200 mb-2">Subject</label>
                       <input 
                         type="text" 
                         id="subject" 
-                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-abbaquar-purple"
+                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4A017]"
                         required
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="message" className="block text-gray-700 mb-2">Message</label>
+                      <label htmlFor="message" className="block text-gray-200 mb-2">Message</label>
                       <textarea 
                         id="message" 
                         rows={4} 
-                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-abbaquar-purple"
+                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#D4A017]"
                         required
                       />
                     </div>
@@ -102,14 +102,14 @@ const Contact = () => {
                         onChange={() => setAgreeToTerms(!agreeToTerms)}
                         className="mr-2"
                       />
-                      <label htmlFor="terms" className="text-gray-700">
+                      <label htmlFor="terms" className="text-gray-200">
                         By using this form you agree with the storage and handling of your data by this website.
                       </label>
                     </div>
                     
                     <button 
                       type="submit" 
-                      className="px-6 py-2 rounded-md font-bold bg-[#D72660] text-white hover:bg-[#b81e4b] transition-colors shadow-md"
+                      className="px-6 py-2 rounded-md font-bold bg-[#D4A017] text-white hover:bg-opacity-90 transition-colors shadow-md"
                     >
                       Send Message
                     </button>
@@ -119,52 +119,52 @@ const Contact = () => {
               
               {/* Contact Information */}
               <div>
-                <div className="bg-white p-8 rounded-lg shadow-md mb-8">
-                  <h2 className="text-2xl font-bold mb-6 text-abbaquar-purple">Contact Information</h2>
+                <div className="bg-[#0A2647] p-8 rounded-lg shadow-md mb-8">
+                  <h2 className="text-2xl font-bold mb-6 text-white">Contact Information</h2>
                   
                   <div className="space-y-6">
                     <div className="flex items-start">
-                      <MapPin className="h-6 w-6 text-abbaquar-accent mr-3 mt-1" />
+                      <MapPin className="h-6 w-6 text-[#D4A017] mr-3 mt-1" />
                       <div>
-                        <h3 className="font-semibold">Address</h3>
-                        <p className="text-gray-600">61 Gardenia Road, Wentworth, Durban, 4052</p>
+                        <h3 className="font-semibold text-white">Address</h3>
+                        <p className="text-gray-200">61 Gardenia Road, Wentworth, Durban, 4052</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start">
-                      <Mail className="h-6 w-6 text-abbaquar-accent mr-3 mt-1" />
+                      <Mail className="h-6 w-6 text-[#D4A017] mr-3 mt-1" />
                       <div>
-                        <h3 className="font-semibold">Email</h3>
-                        <p className="text-gray-600">olivia@abbaquarsandreamcentre.co.za</p>
-                        <p className="text-gray-600">info@abbaquar-sandreamcentre.co.za</p>
+                        <h3 className="font-semibold text-white">Email</h3>
+                        <p className="text-gray-200">olivia@abbaquarsandreamcentre.co.za</p>
+                        <p className="text-gray-200">info@abbaquar-sandreamcentre.co.za</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start">
-                      <Phone className="h-6 w-6 text-abbaquar-accent mr-3 mt-1" />
+                      <Phone className="h-6 w-6 text-[#D4A017] mr-3 mt-1" />
                       <div>
-                        <h3 className="font-semibold">Phone</h3>
-                        <p className="text-gray-600">084 251 5740</p>
+                        <h3 className="font-semibold text-white">Phone</h3>
+                        <p className="text-gray-200">084 251 5740</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-white p-8 rounded-lg shadow-md">
-                  <h2 className="text-2xl font-bold mb-6 text-abbaquar-purple">Service Times</h2>
+                <div className="bg-[#0A2647] p-8 rounded-lg shadow-md">
+                  <h2 className="text-2xl font-bold mb-6 text-white">Service Times</h2>
                   
                   <div className="space-y-4">
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-gray-200">
                       <span className="font-medium">Monday - Friday</span>
-                      <span className="text-gray-600">8am - 5pm</span>
+                      <span>8am - 5pm</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-gray-200">
                       <span className="font-medium">Saturday</span>
-                      <span className="text-gray-600">9am - 2pm</span>
+                      <span>9am - 2pm</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-gray-200">
                       <span className="font-medium">Sunday</span>
-                      <span className="text-gray-600">Closed</span>
+                      <span>Closed</span>
                     </div>
                   </div>
                 </div>
