@@ -3,7 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-// import { ActivitiesModule } from './activities/activities.module';
+import { ActivitiesModule } from './activities/activities.module';
 // import { EventsModule } from './events/events.module';
 import { ContactModule } from './contact/contact.module';
 // import { PhotosModule } from './photos/photos.module';
@@ -16,7 +16,7 @@ import { ContactModule } from './contact/contact.module';
     PrismaModule,
     AuthModule,
     UsersModule,
-    // ActivitiesModule,
+    ActivitiesModule,
     // EventsModule,
     ContactModule,
     // PhotosModule,
