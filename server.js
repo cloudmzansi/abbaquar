@@ -5,6 +5,7 @@ import multer from 'multer';
 import fs from 'fs';
 import path, { join } from 'path';
 import { fileURLToPath } from 'url';
+import { exec } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -42,6 +43,16 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
 });
 const upload = multer({ storage });
+
+function autoCommit(file, message) {
+  exec(`git add ${file} && git commit -m "${message}"`, (err, stdout, stderr) => {
+    if (err) {
+      console.error('Auto-commit failed:', stderr);
+    } else {
+      console.log('Auto-commit:', stdout);
+    }
+  });
+}
 
 // API: Upload image
 app.post('/api/upload', upload.single('image'), (req, res) => {
@@ -87,6 +98,7 @@ app.post('/api/activities', upload.single('image'), (req, res) => {
     activities.push(activity);
     fs.writeFile(activitiesFile, JSON.stringify(activities, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to save activity' });
+      autoCommit(activitiesFile, 'Update activities.json via dashboard');
       res.json(activity);
     });
   });
@@ -103,6 +115,7 @@ app.put('/api/activities/:id', upload.single('image'), (req, res) => {
     activities = activities.map(a => a.id === id ? { ...a, title, description, displayOn, image: image || a.image } : a);
     fs.writeFile(activitiesFile, JSON.stringify(activities, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to update activity' });
+      autoCommit(activitiesFile, 'Update activities.json via dashboard');
       res.json(activities.find(a => a.id === id));
     });
   });
@@ -117,6 +130,7 @@ app.delete('/api/activities/:id', (req, res) => {
     activities = activities.filter(a => a.id !== id);
     fs.writeFile(activitiesFile, JSON.stringify(activities, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to delete activity' });
+      autoCommit(activitiesFile, 'Update activities.json via dashboard');
       res.json({ success: true });
     });
   });
@@ -141,6 +155,7 @@ app.post('/api/events', upload.single('image'), (req, res) => {
     events.push(event);
     fs.writeFile(eventsFile, JSON.stringify(events, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to save event' });
+      autoCommit(eventsFile, 'Update events.json via dashboard');
       res.json(event);
     });
   });
@@ -157,6 +172,7 @@ app.put('/api/events/:id', upload.single('image'), (req, res) => {
     events = events.map(e => e.id === id ? { ...e, title, date, time, venue, description, displayOn, image: image || e.image } : e);
     fs.writeFile(eventsFile, JSON.stringify(events, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to update event' });
+      autoCommit(eventsFile, 'Update events.json via dashboard');
       res.json(events.find(e => e.id === id));
     });
   });
@@ -171,6 +187,7 @@ app.delete('/api/events/:id', (req, res) => {
     events = events.filter(e => e.id !== id);
     fs.writeFile(eventsFile, JSON.stringify(events, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to delete event' });
+      autoCommit(eventsFile, 'Update events.json via dashboard');
       res.json({ success: true });
     });
   });
@@ -195,6 +212,7 @@ app.post('/api/photos', upload.single('image'), (req, res) => {
     photos.push(photo);
     fs.writeFile(photosFile, JSON.stringify(photos, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to save photo' });
+      autoCommit(photosFile, 'Update photos.json via dashboard');
       res.json(photo);
     });
   });

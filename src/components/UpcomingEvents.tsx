@@ -8,31 +8,22 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './UpcomingEvents.css';
 
-const events = [
-  {
-    name: "Youth Empowerment Workshop",
-    date: "Sat, 20 July 2024",
-    time: "10:00 AM - 1:00 PM",
-    location: "Dream Centre Hall",
-    description: "A hands-on workshop for local youth to learn leadership, teamwork, and creative skills. Open to all ages 12-18.",
-  },
-  {
-    name: "Community Family Day",
-    date: "Sun, 4 August 2024",
-    time: "12:00 PM - 4:00 PM",
-    location: "Wentworth Park",
-    description: "Bring your family for a day of games, food, and fun! All proceeds go to supporting our youth programs.",
-  },
-  {
-    name: "Legal Aid Clinic",
-    date: "Wed, 14 August 2024",
-    time: "2:00 PM - 5:00 PM",
-    location: "Dream Centre Office",
-    description: "Free legal advice for community members. Book your slot in advance.",
-  },
-];
+interface Event {
+  id: number;
+  title: string;
+  date: string;
+  time: string;
+  venue: string;
+  description: string;
+  image?: string;
+  displayOn: 'home' | 'events' | 'both';
+}
 
-const EventCard = ({ event }: { event: typeof events[0] }) => (
+interface UpcomingEventsProps {
+  displayOn?: 'home' | 'events';
+}
+
+const EventCard = ({ event }: { event: Event }) => (
   <div className="bg-gray-50 rounded-2xl p-6 h-full">
     <div className="space-y-4">
       <div className="flex items-start justify-between">
@@ -44,7 +35,7 @@ const EventCard = ({ event }: { event: typeof events[0] }) => (
         </span>
       </div>
 
-      <h3 className="text-xl font-semibold text-[#073366] mt-2">{event.name}</h3>
+      <h3 className="text-xl font-semibold text-[#073366] mt-2">{event.title}</h3>
 
       <div className="space-y-2">
         <div className="flex items-center text-gray-600">
@@ -57,17 +48,19 @@ const EventCard = ({ event }: { event: typeof events[0] }) => (
         </div>
         <div className="flex items-center text-gray-600">
           <MapPin className="h-4 w-4 mr-2" />
-          <span className="text-sm">{event.location}</span>
+          <span className="text-sm">{event.venue}</span>
         </div>
       </div>
 
       <p className="text-gray-600 text-sm">{event.description}</p>
+      {event.image && <img src={event.image} alt={event.title} className="w-full h-32 object-cover rounded mt-2" />}
     </div>
   </div>
 );
 
-const UpcomingEvents = () => {
+const UpcomingEvents = ({ displayOn = 'events' }: UpcomingEventsProps) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [events, setEvents] = useState<Event[]>([]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -77,6 +70,18 @@ const UpcomingEvents = () => {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  useEffect(() => {
+    fetch('/api/events')
+      .then(res => res.json())
+      .then(data => {
+        if (displayOn === 'home') {
+          setEvents(data.filter((e: Event) => e.displayOn === 'home' || e.displayOn === 'both'));
+        } else {
+          setEvents(data.filter((e: Event) => e.displayOn === 'events' || e.displayOn === 'both'));
+        }
+      });
+  }, [displayOn]);
 
   return (
     <section className="py-24 bg-white">
@@ -103,8 +108,8 @@ const UpcomingEvents = () => {
               }}
               className="w-full events-swiper"
             >
-              {events.map((event, idx) => (
-                <SwiperSlide key={idx}>
+              {events.map((event) => (
+                <SwiperSlide key={event.id}>
                   <EventCard event={event} />
                 </SwiperSlide>
               ))}
@@ -112,8 +117,8 @@ const UpcomingEvents = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {events.map((event, idx) => (
-              <EventCard key={idx} event={event} />
+            {events.map((event) => (
+              <EventCard key={event.id} event={event} />
             ))}
           </div>
         )}
