@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -25,14 +24,25 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+				primary: 'rgb(var(--color-primary) / <alpha-value>)',
+				'primary-light': 'rgb(var(--color-primary-light) / <alpha-value>)',
+				secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+				neutral: {
+					50: 'rgb(var(--color-neutral-50) / <alpha-value>)',
+					100: 'rgb(var(--color-neutral-100) / <alpha-value>)',
+					200: 'rgb(var(--color-neutral-200) / <alpha-value>)',
+					300: 'rgb(var(--color-neutral-300) / <alpha-value>)',
+					400: 'rgb(var(--color-neutral-400) / <alpha-value>)',
+					500: 'rgb(var(--color-neutral-500) / <alpha-value>)',
+					600: 'rgb(var(--color-neutral-600) / <alpha-value>)',
+					700: 'rgb(var(--color-neutral-700) / <alpha-value>)',
+					800: 'rgb(var(--color-neutral-800) / <alpha-value>)',
+					900: 'rgb(var(--color-neutral-900) / <alpha-value>)',
 				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
+				success: 'rgb(var(--color-success) / <alpha-value>)',
+				warning: 'rgb(var(--color-warning) / <alpha-value>)',
+				error: 'rgb(var(--color-error) / <alpha-value>)',
+				info: 'rgb(var(--color-info) / <alpha-value>)',
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
@@ -113,5 +123,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
