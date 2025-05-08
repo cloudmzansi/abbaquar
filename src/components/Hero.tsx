@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className="bg-[#073366] text-gray-800 pt-40 md:pt-48 lg:pt-56 py-20 mb-16">
-      <div className="container-custom">
+    <section className="bg-[#073366] text-gray-800 min-h-[calc(100vh-6rem)] flex items-center mt-24">
+      <div className="container-custom py-16 md:py-0">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white text-center md:text-left">
