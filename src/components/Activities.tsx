@@ -89,6 +89,8 @@ const Activities = () => {
                     }
                   })()} 
                   className="w-full h-full object-cover transition-transform hover:scale-105"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div className="p-6">
