@@ -46,7 +46,9 @@ const Header = () => {
               <img 
                 src="/assets/abbaquar-logo.webp" 
                 alt="Abbaquar Logo" 
-                className="h-16 mr-3"
+                className="h-16 mr-3" 
+                width="64" 
+                height="64" 
               />
             </a>
           </div>
