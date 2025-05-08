@@ -84,16 +84,9 @@ const Activities = ({ showHeader = true }: ActivitiesProps) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
-              <div className="p-6 relative">
-                <div className="absolute -top-10 left-6 bg-[#D72660] text-white px-4 py-2 rounded-full text-sm font-medium">
-                  Active Program
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-[#073366] mt-4">{activity.title}</h3>
-                <p className="text-gray-600 mb-4">{activity.description}</p>
-                <button className="w-full bg-gray-50 text-[#073366] px-4 py-2.5 rounded-xl border border-gray-200 hover:border-[#073366] transition-all flex items-center justify-center group-hover:bg-[#073366] group-hover:text-white">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </button>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3 text-[#073366]">{activity.title}</h3>
+                <p className="text-gray-600">{activity.description}</p>
               </div>
             </div>
           ))}

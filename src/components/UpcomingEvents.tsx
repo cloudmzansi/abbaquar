@@ -1,5 +1,5 @@
 import React from "react";
-import { Calendar, Clock, MapPin, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, MapPin } from 'lucide-react';
 
 const events = [
   {
@@ -68,11 +68,6 @@ const UpcomingEvents = () => (
               </div>
 
               <p className="text-gray-600 text-sm">{event.description}</p>
-
-              <button className="mt-4 w-full bg-white text-[#073366] px-4 py-2 rounded-xl border border-gray-200 hover:border-[#073366] transition-all flex items-center justify-center group-hover:bg-[#073366] group-hover:text-white">
-                Register Now
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </button>
             </div>
           </div>
         ))}
