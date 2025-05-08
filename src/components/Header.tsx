@@ -36,7 +36,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-white shadow-sm z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'} fixed w-full`}
+      className={`bg-[#0A2647] shadow-sm z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'} fixed w-full`}
       style={{ willChange: 'transform' }}
     >
       <div className="container-custom py-4">
@@ -55,22 +55,22 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8 items-center font-bold">
-            <Link to="/" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+            <Link to="/" className="text-white hover:text-[#D4A017] transition-colors">
               Home
             </Link>
-            <Link to="/about-us" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+            <Link to="/about-us" className="text-white hover:text-[#D4A017] transition-colors">
               About Us
             </Link>
-            <Link to="/activities" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+            <Link to="/activities" className="text-white hover:text-[#D4A017] transition-colors">
               Activities
             </Link>
-            <Link to="/gallery" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+            <Link to="/gallery" className="text-white hover:text-[#D4A017] transition-colors">
               Gallery
             </Link>
-            <Link to="/contact" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+            <Link to="/contact" className="text-white hover:text-[#D4A017] transition-colors">
               Contact
             </Link>
-            <a href="/#donate" className="ml-4 px-6 py-2 rounded-md font-bold bg-[#D72660] text-white hover:bg-[#b81e4b] transition-colors shadow-md">
+            <a href="/#donate" className="ml-4 px-6 py-2 rounded-md font-bold bg-[#D4A017] text-white hover:bg-opacity-90 transition-colors shadow-md">
               Donate
             </a>
           </nav>
@@ -78,9 +78,9 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button className="md:hidden" onClick={toggleMobileMenu}>
             {mobileMenuOpen ? (
-              <X className="h-6 w-6 text-abbaquar-purple" />
+              <X className="h-6 w-6 text-white" />
             ) : (
-              <Menu className="h-6 w-6 text-abbaquar-purple" />
+              <Menu className="h-6 w-6 text-white" />
             )}
           </button>
         </div>
@@ -88,22 +88,22 @@ const Header = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <nav className="md:hidden py-4 flex flex-col space-y-4 font-bold">
-            <Link to="/" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+            <Link to="/" className="text-white hover:text-[#D4A017] transition-colors">
               Home
             </Link>
-            <Link to="/about-us" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+            <Link to="/about-us" className="text-white hover:text-[#D4A017] transition-colors">
               About Us
             </Link>
-            <Link to="/activities" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+            <Link to="/activities" className="text-white hover:text-[#D4A017] transition-colors">
               Activities
             </Link>
-            <Link to="/gallery" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+            <Link to="/gallery" className="text-white hover:text-[#D4A017] transition-colors">
               Gallery
             </Link>
-            <Link to="/contact" className="text-abbaquar-dark hover:text-abbaquar-purple transition-colors">
+            <Link to="/contact" className="text-white hover:text-[#D4A017] transition-colors">
               Contact
             </Link>
-            <a href="/#donate" className="inline-block w-auto self-start px-4 py-2 rounded-md font-bold bg-[#D72660] text-white text-base hover:bg-[#b81e4b] transition-colors shadow-md">
+            <a href="/#donate" className="inline-block w-auto self-start px-4 py-2 rounded-md font-bold bg-[#D4A017] text-white hover:bg-opacity-90 transition-colors shadow-md">
               Donate
             </a>
           </nav>
