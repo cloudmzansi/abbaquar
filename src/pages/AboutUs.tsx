@@ -123,7 +123,7 @@ const AboutUs = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 divide-y-8 divide-transparent">
               {teamMembers.map((member, index) => (
                 <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md text-center p-2">
-                  <div className="aspect-square overflow-hidden rounded-full">
+                  <div className="aspect-square overflow-hidden rounded-lg">
                     <img 
                       src={member.image} 
                       alt={`${member.name} - ${member.role}`}
