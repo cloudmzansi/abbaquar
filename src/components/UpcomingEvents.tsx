@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Calendar, Clock, MapPin } from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -88,20 +88,21 @@ const UpcomingEvents = () => {
         </div>
 
         {isMobile ? (
-          <Swiper
-            modules={[Pagination]}
-            spaceBetween={16}
-            slidesPerView={1.2}
-            centeredSlides={true}
-            pagination={{ clickable: true }}
-            className="w-full pb-12"
-          >
-            {events.map((event, idx) => (
-              <SwiperSlide key={idx}>
-                <EventCard event={event} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="w-full pb-12">
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={16}
+              slidesPerView={1.2}
+              centeredSlides={true}
+              pagination={{ clickable: true }}
+            >
+              {events.map((event, idx) => (
+                <div key={idx} className="swiper-slide">
+                  <EventCard event={event} />
+                </div>
+              ))}
+            </Swiper>
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {events.map((event, idx) => (

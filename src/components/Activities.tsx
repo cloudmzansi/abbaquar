@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -101,20 +101,21 @@ const Activities = ({ showHeader = true }: ActivitiesProps) => {
         )}
 
         {isMobile ? (
-          <Swiper
-            modules={[Pagination]}
-            spaceBetween={16}
-            slidesPerView={1.2}
-            centeredSlides={true}
-            pagination={{ clickable: true }}
-            className="w-full pb-12"
-          >
-            {activities.map((activity) => (
-              <SwiperSlide key={activity.id}>
-                <ActivityCard activity={activity} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="w-full pb-12">
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={16}
+              slidesPerView={1.2}
+              centeredSlides={true}
+              pagination={{ clickable: true }}
+            >
+              {activities.map((activity) => (
+                <div key={activity.id} className="swiper-slide">
+                  <ActivityCard activity={activity} />
+                </div>
+              ))}
+            </Swiper>
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {activities.map((activity) => (

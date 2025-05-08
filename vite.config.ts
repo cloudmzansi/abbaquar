@@ -27,6 +27,12 @@ export default defineConfig(({ mode }) => ({
           '@vercel/analytics/react': 'vercelAnalytics'
         }
       }
+    },
+    commonjsOptions: {
+      include: [/node_modules/],
+    },
+    optimizeDeps: {
+      include: ['swiper', 'swiper/react', 'swiper/modules']
     }
   }
 }));
