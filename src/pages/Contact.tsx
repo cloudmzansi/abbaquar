@@ -245,8 +245,8 @@ const Contact = () => {
         {/* Map Section */}
         <section className="py-8">
           <div className="container-custom">
-            <div className="h-[500px] rounded-lg overflow-hidden">
-              <Map />
+            <div className="h-[500px] w-full rounded-lg overflow-hidden shadow-lg">
+              <Map className="w-full h-full" />
             </div>
           </div>
         </section>

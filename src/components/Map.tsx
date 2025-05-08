@@ -23,7 +23,10 @@ interface MapProps {
 export default function Map({ className = '' }: MapProps) {
   useEffect(() => {
     // Initialize the map
-    const map = L.map('map').setView([-29.9330556, 30.9830556], 15);
+    const map = L.map('map', {
+      zoomControl: true,
+      scrollWheelZoom: false
+    }).setView([-29.9330556, 30.9830556], 15);
 
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -41,6 +44,11 @@ export default function Map({ className = '' }: MapProps) {
       </div>
     `).openPopup();
 
+    // Force a resize to ensure the map fills the container
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 100);
+
     // Cleanup
     return () => {
       map.remove();
@@ -48,8 +56,8 @@ export default function Map({ className = '' }: MapProps) {
   }, []);
 
   return (
-    <div className={className}>
-      <div id="map" className="w-full h-full rounded-lg" />
+    <div className={`${className} relative w-full h-full min-h-[500px]`}>
+      <div id="map" className="absolute inset-0 w-full h-full rounded-lg" />
     </div>
   );
 } 

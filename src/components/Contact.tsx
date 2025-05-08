@@ -148,7 +148,7 @@ const Contact = () => {
                 
                 <button 
                   type="submit" 
-                  className="w-full bg-[#2ECC71] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-opacity-90 transition-all transform hover:scale-105 flex items-center justify-center"
+                  className="w-full bg-[#2ECC71] text-white px-8 py-4 rounded-xl font-semibold text-lg flex items-center justify-center"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
