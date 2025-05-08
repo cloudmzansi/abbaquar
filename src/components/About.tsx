@@ -3,7 +3,7 @@ const About = () => {
     <section id="about" className="py-32 bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <span className="text-[#4CAF50] font-semibold mb-4 block">Who We Are</span>
+          <span className="text-[#D72660] font-semibold mb-4 block">Who We Are</span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#073366] font-serif">About Us</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             We are a cultural organization dedicated to uplifting and rebuilding our community through various programs and initiatives.
@@ -12,7 +12,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-[#9C27B0]">The Royal House</h3>
+              <h3 className="text-2xl font-bold mb-4 text-[#073366]">The Royal House</h3>
               <p className="text-gray-600">
                 The Abbaquar-San Royal house is now official and recognised in Parliament. 
                 This comes after President Cyril Ramaphosa announced in March that the Traditional 
@@ -20,7 +20,7 @@ const About = () => {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-[#E53935]">Our Community</h3>
+              <h3 className="text-2xl font-bold mb-4 text-[#073366]">Our Community</h3>
               <p className="text-gray-600">
                 We are a cultural organization geared towards assisting, uplifting and rebuilding our community. 
                 As an organization our efforts lie predominately with the youth as well as the elderly within our community. 
