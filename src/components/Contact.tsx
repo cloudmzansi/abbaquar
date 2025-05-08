@@ -76,7 +76,7 @@ const Contact = () => {
     <section className="py-24 bg-gradient-to-b from-[#073366] to-[#0A2647]">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <span className="text-[#D4AF37] font-semibold mb-4 block">Get In Touch</span>
+          <span className="text-[#2ECC71] font-semibold mb-4 block">Get In Touch</span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white font-serif">Contact Us</h2>
           <p className="text-lg text-gray-200 max-w-3xl mx-auto">
             Have questions or want to get involved? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
@@ -99,7 +99,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       autoComplete="name"
-                      className="w-full px-6 py-4 text-lg border-2 rounded-xl focus:outline-none focus:border-[#D4AF37] transition-all"
+                      className="w-full px-6 py-4 text-lg border-2 rounded-xl focus:outline-none focus:border-[#2ECC71] transition-all"
                       required
                       placeholder="Your name"
                     />
@@ -116,7 +116,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       autoComplete="email"
-                      className="w-full px-6 py-4 text-lg border-2 rounded-xl focus:outline-none focus:border-[#D4AF37] transition-all"
+                      className="w-full px-6 py-4 text-lg border-2 rounded-xl focus:outline-none focus:border-[#2ECC71] transition-all"
                       required
                       placeholder="Your email"
                     />
@@ -133,7 +133,7 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 text-lg border-2 rounded-xl focus:outline-none focus:border-[#D4AF37] transition-all"
+                    className="w-full px-6 py-4 text-lg border-2 rounded-xl focus:outline-none focus:border-[#2ECC71] transition-all"
                     required
                     placeholder="Message subject"
                   />
@@ -149,7 +149,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4} 
-                    className="w-full px-6 py-4 text-lg border-2 rounded-xl focus:outline-none focus:border-[#D4AF37] transition-all"
+                    className="w-full px-6 py-4 text-lg border-2 rounded-xl focus:outline-none focus:border-[#2ECC71] transition-all"
                     required
                     placeholder="Your message"
                   />
@@ -157,7 +157,7 @@ const Contact = () => {
                 
                 <button 
                   type="submit" 
-                  className="w-full bg-[#D4AF37] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-opacity-90 transition-all transform hover:scale-105 flex items-center justify-center"
+                  className="w-full bg-[#2ECC71] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-opacity-90 transition-all transform hover:scale-105 flex items-center justify-center"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -178,7 +178,7 @@ const Contact = () => {
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-xl">
-                    <MapPin className="h-6 w-6 text-[#D4AF37]" />
+                    <MapPin className="h-6 w-6 text-[#2ECC71]" />
                   </div>
                   <div>
                     <h4 className="text-white font-semibold text-lg">Address</h4>
@@ -188,7 +188,7 @@ const Contact = () => {
                 
                 <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-xl">
-                    <Phone className="h-6 w-6 text-[#D4AF37]" />
+                    <Phone className="h-6 w-6 text-[#2ECC71]" />
                   </div>
                   <div>
                     <h4 className="text-white font-semibold text-lg">Phone</h4>
@@ -198,7 +198,7 @@ const Contact = () => {
                 
                 <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-xl">
-                    <Mail className="h-6 w-6 text-[#D4AF37]" />
+                    <Mail className="h-6 w-6 text-[#2ECC71]" />
                   </div>
                   <div>
                     <h4 className="text-white font-semibold text-lg">Email</h4>

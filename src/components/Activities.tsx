@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import './Activities.css';
 
 interface Activity {
   id: number;
@@ -108,7 +109,7 @@ const Activities = ({ showHeader = true }: ActivitiesProps) => {
               slidesPerView={1.2}
               centeredSlides={true}
               pagination={{ clickable: true }}
-              className="w-full"
+              className="w-full activities-swiper"
             >
               {activities.map((activity) => (
                 <SwiperSlide key={activity.id}>
