@@ -178,7 +178,7 @@ const Contact = () => {
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-xl">
-                    <MapPin className="h-6 w-6 text-[#D72660]" />
+                    <MapPin className="h-6 w-6 text-[#40916C]" />
                   </div>
                   <div>
                     <h4 className="text-white font-semibold text-lg">Address</h4>
@@ -188,7 +188,7 @@ const Contact = () => {
                 
                 <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-xl">
-                    <Phone className="h-6 w-6 text-[#4CAF50]" />
+                    <Phone className="h-6 w-6 text-[#40916C]" />
                   </div>
                   <div>
                     <h4 className="text-white font-semibold text-lg">Phone</h4>
@@ -198,11 +198,11 @@ const Contact = () => {
                 
                 <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-xl">
-                    <Mail className="h-6 w-6 text-[#9C27B0]" />
+                    <Mail className="h-6 w-6 text-[#40916C]" />
                   </div>
                   <div>
                     <h4 className="text-white font-semibold text-lg">Email</h4>
-                    <p className="text-gray-200">info@abbaquarsandreamcentre.co.za</p>
+                    <p className="text-gray-200 break-all">info@abbaquarsandreamcentre.co.za</p>
                   </div>
                 </div>
               </div>
