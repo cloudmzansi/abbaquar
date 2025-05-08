@@ -19,7 +19,7 @@ app.use(compression());
 // Serve static files from the dist directory
 app.use(express.static(join(__dirname, 'dist')));
 
-// Handle all routes by serving index.html
+// Serve index.html for all routes (for client-side routing)
 app.get('*', (req, res) => {
   res.sendFile(join(__dirname, 'dist', 'index.html'));
 });
