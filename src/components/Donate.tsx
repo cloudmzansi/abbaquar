@@ -44,63 +44,63 @@ const Donate = () => {
     <>
       <span id="donate" className="block h-0 w-0 -mt-24" aria-hidden="true"></span>
       <section className="section-padding bg-[#073366] text-white">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Donate</h2>
-              <p className="text-lg md:text-xl mb-8">
-                Support Abbaquar
-              </p>
-              <p className="text-lg md:text-xl mb-6">
-                A little donation goes a long way. Select an amount below or enter your desired amount.
-              </p>
-            </div>
+      <div className="container-custom">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Donate</h2>
+            <p className="text-lg md:text-xl mb-8">
+              Support Abbaquar
+            </p>
+            <p className="text-lg md:text-xl mb-6">
+              A little donation goes a long way. Select an amount below or enter your desired amount.
+            </p>
+          </div>
 
-            <div className="bg-white text-abbaquar-dark rounded-lg p-8 shadow-lg">
-              <form onSubmit={handleDonate}>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                  {predefinedAmounts.map((amt) => (
-                    <button
-                      key={amt}
-                      type="button"
-                      className={`py-3 px-4 border rounded-md transition-all ${
-                        selectedAmount === amt 
-                          ? 'bg-[#0A2647] text-white border-[#0A2647]' 
-                          : 'border-[#0A2647] text-[#0A2647] hover:bg-[#0A2647] hover:text-white'
-                      }`}
-                      onClick={() => handleAmountClick(amt)}
-                    >
-                      R{amt}
-                    </button>
-                  ))}
+          <div className="bg-white text-abbaquar-dark rounded-lg p-8 shadow-lg">
+            <form onSubmit={handleDonate}>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                {predefinedAmounts.map((amt) => (
+                  <button
+                    key={amt}
+                    type="button"
+                    className={`py-3 px-4 border rounded-md transition-all ${
+                      selectedAmount === amt 
+                        ? 'bg-[#0A2647] text-white border-[#0A2647]' 
+                        : 'border-[#0A2647] text-[#0A2647] hover:bg-[#0A2647] hover:text-white'
+                    }`}
+                    onClick={() => handleAmountClick(amt)}
+                  >
+                    R{amt}
+                  </button>
+                ))}
+              </div>
+              
+              <div className="mb-6">
+                <label htmlFor="amount" className="block text-gray-700 mb-2">Or enter custom amount:</label>
+                <div className="flex items-center border rounded-md overflow-hidden">
+                  <span className="bg-gray-100 px-4 py-3 border-r">R</span>
+                  <input
+                    type="text"
+                    id="amount"
+                    value={amount}
+                    onChange={handleCustomAmount}
+                    className="flex-1 px-4 py-3 outline-none"
+                    placeholder="Enter amount"
+                  />
                 </div>
-                
-                <div className="mb-6">
-                  <label htmlFor="amount" className="block text-gray-700 mb-2">Or enter custom amount:</label>
-                  <div className="flex items-center border rounded-md overflow-hidden">
-                    <span className="bg-gray-100 px-4 py-3 border-r">R</span>
-                    <input
-                      type="text"
-                      id="amount"
-                      value={amount}
-                      onChange={handleCustomAmount}
-                      className="flex-1 px-4 py-3 outline-none"
-                      placeholder="Enter amount"
-                    />
-                  </div>
-                </div>
-                
-                <button 
-                  type="submit" 
-                  className="w-full bg-[#0A284A] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all"
-                >
-                  Donate Now
-                </button>
-              </form>
-            </div>
+              </div>
+              
+              <button 
+                type="submit" 
+                className="w-full bg-[#0A284A] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all"
+              >
+                Donate Now
+              </button>
+            </form>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
     </>
   );
 };
