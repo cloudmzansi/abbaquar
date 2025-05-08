@@ -1,52 +1,66 @@
 import { Injectable, HttpException } from '@nestjs/common';
 import { CreateActivityDto, UpdateActivityDto } from './dto/activity.dto';
-import { PrismaService } from '../prisma/prisma.service';
+import * as fs from 'fs';
+import * as path from 'path';
+
+const ACTIVITIES_PATH = path.join(__dirname, '../../../../data/activities.json');
 
 @Injectable()
 export class ActivitiesService {
-  constructor(private readonly prisma: PrismaService) {}
-
   async findAll() {
     try {
-      return await this.prisma.activity.findMany();
+      const data = fs.readFileSync(ACTIVITIES_PATH, 'utf-8');
+      return JSON.parse(data);
     } catch (err) {
-      console.error('Error fetching activities:', err);
       throw new HttpException('Failed to fetch activities', 500);
     }
   }
 
   async findOne(id: string) {
     try {
-      return await this.prisma.activity.findUnique({ where: { id } });
+      const data = fs.readFileSync(ACTIVITIES_PATH, 'utf-8');
+      const activities = JSON.parse(data);
+      return activities.find((a: any) => a.id === id);
     } catch (err) {
-      console.error('Error fetching activity:', err);
       throw new HttpException('Failed to fetch activity', 500);
     }
   }
 
   async create(createActivityDto: CreateActivityDto) {
     try {
-      return await this.prisma.activity.create({ data: createActivityDto });
+      const data = fs.readFileSync(ACTIVITIES_PATH, 'utf-8');
+      const activities = JSON.parse(data);
+      const newActivity = { id: Date.now().toString(), ...createActivityDto };
+      activities.push(newActivity);
+      fs.writeFileSync(ACTIVITIES_PATH, JSON.stringify(activities, null, 2));
+      return newActivity;
     } catch (err) {
-      console.error('Error creating activity:', err);
       throw new HttpException('Failed to create activity', 500);
     }
   }
 
   async update(id: string, updateActivityDto: UpdateActivityDto) {
     try {
-      return await this.prisma.activity.update({ where: { id }, data: updateActivityDto });
+      const data = fs.readFileSync(ACTIVITIES_PATH, 'utf-8');
+      const activities = JSON.parse(data);
+      const idx = activities.findIndex((a: any) => a.id === id);
+      if (idx === -1) throw new HttpException('Activity not found', 404);
+      activities[idx] = { ...activities[idx], ...updateActivityDto };
+      fs.writeFileSync(ACTIVITIES_PATH, JSON.stringify(activities, null, 2));
+      return activities[idx];
     } catch (err) {
-      console.error('Error updating activity:', err);
       throw new HttpException('Failed to update activity', 500);
     }
   }
 
   async remove(id: string) {
     try {
-      return await this.prisma.activity.delete({ where: { id } });
+      const data = fs.readFileSync(ACTIVITIES_PATH, 'utf-8');
+      let activities = JSON.parse(data);
+      activities = activities.filter((a: any) => a.id !== id);
+      fs.writeFileSync(ACTIVITIES_PATH, JSON.stringify(activities, null, 2));
+      return { success: true };
     } catch (err) {
-      console.error('Error removing activity:', err);
       throw new HttpException('Failed to remove activity', 500);
     }
   }

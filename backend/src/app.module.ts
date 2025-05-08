@@ -7,6 +7,9 @@ import { ActivitiesModule } from './activities/activities.module';
 // import { EventsModule } from './events/events.module';
 import { ContactModule } from './contact/contact.module';
 // import { PhotosModule } from './photos/photos.module';
+import { EventsController } from './events.controller';
+import { PhotosController } from './photos.controller';
+import { ClearUploadsController } from './clear-uploads.controller';
 
 @Module({
   imports: [
@@ -21,5 +24,6 @@ import { ContactModule } from './contact/contact.module';
     ContactModule,
     // PhotosModule,
   ],
+  controllers: [EventsController, PhotosController, ClearUploadsController],
 })
 export class AppModule {} 
