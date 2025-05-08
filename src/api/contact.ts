@@ -12,20 +12,31 @@ export async function submitContactForm(data: ContactFormData) {
     throw new Error('Invalid email format');
   }
 
-  // Here you would typically send this to your backend server
-  // For now, we'll simulate an API call
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // Simulate success
-      if (Math.random() > 0.1) { // 90% success rate
-        resolve({
-          success: true,
-          message: 'Message sent successfully'
-        });
-      } else {
-        // Simulate error
-        reject(new Error('Failed to send message'));
-      }
-    }, 1000);
-  });
+  try {
+    // Create FormData
+    const formData = new FormData();
+    formData.append('name', data.name);
+    formData.append('email', data.email);
+    formData.append('subject', data.subject);
+    formData.append('message', data.message);
+
+    const response = await fetch('https://kdinteriors.co.za/contact.php', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      return {
+        success: true,
+        message: 'Message sent successfully'
+      };
+    } else {
+      throw new Error(result.error || 'Failed to send message');
+    }
+  } catch (error) {
+    console.error('Email sending error:', error);
+    throw new Error('Failed to send message');
+  }
 } 
