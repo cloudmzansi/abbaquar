@@ -65,11 +65,17 @@ const Header = () => {
         className={`fixed top-0 left-0 right-0 bg-[#073366] transition-transform duration-300 ${
           showHeader ? 'translate-y-0' : '-translate-y-full'
         } border-b border-white/40 z-50`}
+        role="banner"
       >
         <div className="container-custom py-3">
-          <nav className="flex justify-between items-center relative">
+          <nav className="flex justify-between items-center relative" aria-label="Main navigation">
             <div className="flex items-center">
-              <Link to="/" className="flex items-center" onClick={scrollToTop}>
+              <Link 
+                to="/" 
+                className="flex items-center" 
+                onClick={scrollToTop}
+                aria-label="Go to homepage"
+              >
                 <img 
                   src="/assets/abbaquar-logo.webp" 
                   alt="Abbaquar Logo" 
@@ -82,20 +88,45 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center">
-              <div className="flex items-center space-x-1">
-                <Link to="/" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
+              <div className="flex items-center space-x-1" role="menubar">
+                <Link 
+                  to="/" 
+                  className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10"
+                  role="menuitem"
+                  aria-current={location.pathname === '/' ? 'page' : undefined}
+                >
                   Home
                 </Link>
-                <Link to="/about-us" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
+                <Link 
+                  to="/about-us" 
+                  className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10"
+                  role="menuitem"
+                  aria-current={location.pathname === '/about-us' ? 'page' : undefined}
+                >
                   About Us
                 </Link>
-                <Link to="/activities" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
+                <Link 
+                  to="/activities" 
+                  className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10"
+                  role="menuitem"
+                  aria-current={location.pathname === '/activities' ? 'page' : undefined}
+                >
                   Activities
                 </Link>
-                <Link to="/gallery" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
+                <Link 
+                  to="/gallery" 
+                  className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10"
+                  role="menuitem"
+                  aria-current={location.pathname === '/gallery' ? 'page' : undefined}
+                >
                   Gallery
                 </Link>
-                <Link to="/contact" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
+                <Link 
+                  to="/contact" 
+                  className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10"
+                  role="menuitem"
+                  aria-current={location.pathname === '/contact' ? 'page' : undefined}
+                >
                   Contact
                 </Link>
               </div>
@@ -103,6 +134,7 @@ const Header = () => {
                 <a 
                   href="/#donate" 
                   className="px-6 py-2.5 rounded-full font-semibold bg-[#D72660] text-white hover:bg-opacity-90 transition-all"
+                  role="button"
                 >
                   Donate
                 </a>
@@ -114,11 +146,13 @@ const Header = () => {
               className="md:hidden rounded-full p-2 hover:bg-white/10 transition-all relative z-50"
               onClick={toggleMobileMenu}
               aria-label="Toggle mobile menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               {mobileMenuOpen ? (
-                <X className="h-6 w-6 text-white" />
+                <X className="h-6 w-6 text-white" aria-hidden="true" />
               ) : (
-                <Menu className="h-6 w-6 text-white" />
+                <Menu className="h-6 w-6 text-white" aria-hidden="true" />
               )}
             </button>
           </nav>
@@ -131,19 +165,29 @@ const Header = () => {
           mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         } z-40`}
         onClick={toggleMobileMenu}
+        aria-hidden="true"
       />
 
       {/* Mobile Menu */}
       <div 
+        id="mobile-menu"
         className={`fixed inset-x-0 top-0 bg-[#073366] transition-transform duration-300 ease-in-out transform md:hidden pt-20 ${
           mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
         } z-40`}
+        role="dialog"
+        aria-label="Mobile menu"
+        aria-modal="true"
+        aria-hidden={!mobileMenuOpen}
       >
-        <nav className="container-custom py-6 flex flex-col space-y-4">
+        <nav 
+          className="container-custom py-6 flex flex-col space-y-4"
+          aria-label="Mobile navigation"
+        >
           <Link 
             to="/" 
             className="px-4 py-3 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-lg"
             onClick={toggleMobileMenu}
+            aria-current={location.pathname === '/' ? 'page' : undefined}
           >
             Home
           </Link>
@@ -151,6 +195,7 @@ const Header = () => {
             to="/about-us" 
             className="px-4 py-3 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-lg"
             onClick={toggleMobileMenu}
+            aria-current={location.pathname === '/about-us' ? 'page' : undefined}
           >
             About Us
           </Link>
@@ -158,6 +203,7 @@ const Header = () => {
             to="/activities" 
             className="px-4 py-3 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-lg"
             onClick={toggleMobileMenu}
+            aria-current={location.pathname === '/activities' ? 'page' : undefined}
           >
             Activities
           </Link>
@@ -165,6 +211,7 @@ const Header = () => {
             to="/gallery" 
             className="px-4 py-3 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-lg"
             onClick={toggleMobileMenu}
+            aria-current={location.pathname === '/gallery' ? 'page' : undefined}
           >
             Gallery
           </Link>
@@ -172,6 +219,7 @@ const Header = () => {
             to="/contact" 
             className="px-4 py-3 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-lg"
             onClick={toggleMobileMenu}
+            aria-current={location.pathname === '/contact' ? 'page' : undefined}
           >
             Contact
           </Link>
@@ -180,6 +228,7 @@ const Header = () => {
               to="/contact" 
               className="flex-1 px-4 py-3 text-white/90 hover:text-white transition-all rounded-lg border border-white/20 text-center text-lg"
               onClick={toggleMobileMenu}
+              aria-current={location.pathname === '/contact' ? 'page' : undefined}
             >
               Contact
             </Link>
@@ -187,6 +236,7 @@ const Header = () => {
               href="/#donate" 
               className="flex-1 px-4 py-3 rounded-lg font-semibold bg-[#D72660] text-white hover:bg-opacity-90 transition-all text-center text-lg"
               onClick={toggleMobileMenu}
+              role="button"
             >
               Donate
             </a>

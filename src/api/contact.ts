@@ -1,9 +1,31 @@
 import { ContactFormData } from '@/types';
 
-export async function submitContactForm(data: ContactFormData) {
-  // Validate data
-  if (!data.name || !data.email || !data.subject || !data.message) {
-    throw new Error('All fields are required');
+/**
+ * Submits the contact form data to the server
+ * 
+ * @param {ContactFormData} data - The form data to submit
+ * @returns {Promise<{success: boolean, message: string}>} - The response from the server
+ * @throws {Error} - Throws an error if validation fails or if the server request fails
+ * 
+ * @example
+ * try {
+ *   const result = await submitContactForm({
+ *     name: 'John Doe',
+ *     email: 'john@example.com',
+ *     subject: 'Inquiry',
+ *     message: 'Hello'
+ *   });
+ * } catch (error) {
+ *   console.error(error);
+ * }
+ */
+export async function submitContactForm(data: ContactFormData): Promise<{ success: boolean; message: string }> {
+  // Validate required fields
+  const requiredFields: (keyof ContactFormData)[] = ['name', 'email', 'subject', 'message'];
+  const missingFields = requiredFields.filter(field => !data[field]);
+  
+  if (missingFields.length > 0) {
+    throw new Error(`Required fields missing: ${missingFields.join(', ')}`);
   }
 
   // Validate email format
@@ -15,15 +37,18 @@ export async function submitContactForm(data: ContactFormData) {
   try {
     // Create FormData
     const formData = new FormData();
-    formData.append('name', data.name);
-    formData.append('email', data.email);
-    formData.append('subject', data.subject);
-    formData.append('message', data.message);
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
 
     const response = await fetch('https://kdinteriors.co.za/contact.php', {
       method: 'POST',
       body: formData,
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
     const result = await response.json();
 
@@ -37,6 +62,6 @@ export async function submitContactForm(data: ContactFormData) {
     }
   } catch (error) {
     console.error('Email sending error:', error);
-    throw new Error('Failed to send message');
+    throw new Error(error instanceof Error ? error.message : 'Failed to send message');
   }
 } 

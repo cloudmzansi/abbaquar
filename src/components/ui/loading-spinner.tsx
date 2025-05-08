@@ -1,6 +1,11 @@
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg';
   className?: string;
+  /**
+   * The text to be announced by screen readers.
+   * Defaults to "Loading..."
+   */
+  loadingText?: string;
 }
 
 const sizeClasses = {
@@ -9,14 +14,24 @@ const sizeClasses = {
   lg: 'h-12 w-12'
 };
 
-export function LoadingSpinner({ size = 'md', className = '' }: LoadingSpinnerProps) {
+export function LoadingSpinner({ 
+  size = 'md', 
+  className = '', 
+  loadingText = 'Loading...' 
+}: LoadingSpinnerProps) {
   return (
-    <div role="status" className={`animate-spin ${className}`}>
+    <div 
+      role="status" 
+      className={`animate-spin ${className}`}
+      aria-live="polite"
+      aria-busy="true"
+    >
       <svg
         className={`${sizeClasses[size]} text-[#073366]`}
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
         <circle
           className="opacity-25"
@@ -32,7 +47,7 @@ export function LoadingSpinner({ size = 'md', className = '' }: LoadingSpinnerPr
           d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
         />
       </svg>
-      <span className="sr-only">Loading...</span>
+      <span className="sr-only">{loadingText}</span>
     </div>
   );
 } 
