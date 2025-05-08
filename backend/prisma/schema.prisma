@@ -80,4 +80,11 @@ model ContactSubmission {
   message   String
   createdAt DateTime @default(now())
   status    String   @default("PENDING") // PENDING, RESPONDED, ARCHIVED
+}
+
+model Photo {
+  id          String   @id @default(cuid())
+  filename    String   @unique
+  description String?
+  createdAt   DateTime @default(now())
 } 
