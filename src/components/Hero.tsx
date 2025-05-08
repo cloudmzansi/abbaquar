@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-b from-[#073366] to-[#0A2647] text-gray-800 min-h-screen flex items-center pt-[104px]">
+    <section className="bg-gradient-to-b from-[#073366] to-[#0A2647] text-gray-800 min-h-screen flex items-center pt-[88px]">
       <div className="container-custom flex-grow flex items-center py-16">
         <div className="flex flex-col md:flex-row items-center gap-12 w-full">
           <div className="md:w-1/2 mb-10 md:mb-0">
