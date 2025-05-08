@@ -9,16 +9,16 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
-  { name: "Brylan Kock", role: "Paramount Chief", image: "/placeholder.svg" },
-  { name: "Chief Mervyn Damas", role: "District Chief", image: "/placeholder.svg" },
-  { name: "Chieftess Olivia Jones", role: "Chairperson", image: "/placeholder.svg" },
-  { name: "Genevieve Coughlan", role: "Treasurer", image: "/placeholder.svg" },
-  { name: "Headwoman Nolene Ogle", role: "Deputy Chairperson", image: "/placeholder.svg" },
-  { name: "Jason Abrahams", role: "Senior Chief", image: "/placeholder.svg" },
-  { name: "Karen Smarts", role: "Secretary", image: "/placeholder.svg" },
-  { name: "Kevin Louw", role: "District Chief", image: "/placeholder.svg" },
-  { name: "Michell Houston", role: "Personal Assistant to District Chiefs", image: "/placeholder.svg" },
-  { name: "Stanley Smith", role: "Marketing Manager", image: "/placeholder.svg" }
+  { name: "Brylan Kock", role: "Paramount Chief", image: "/assets/brylan-kock.webp" },
+  { name: "Chief Mervyn Damas", role: "District Chief", image: "/assets/chief-mervyn-damas.webp" },
+  { name: "Chieftess Olivia Jones", role: "Chairperson", image: "/assets/chieftess-olivia-jones.webp" },
+  { name: "Genevieve Coughlan", role: "Treasurer", image: "/assets/genevieve-coughlan.webp" },
+  { name: "Headwoman Nolene Ogle", role: "Deputy Chairperson", image: "/assets/headwoman-nolene-ogle.webp" },
+  { name: "Jason Abrahams", role: "Senior Chief", image: "/assets/jason-abrahams.webp" },
+  { name: "Karen Smarts", role: "Secretary", image: "/assets/karen-smarts.webp" },
+  { name: "Kevin Louw", role: "District Chief", image: "/assets/kevin-louw.webp" },
+  { name: "Michell Houston", role: "Personal Assistant to District Chiefs", image: "/assets/michell-houston.webp" },
+  { name: "Stanley Smith", role: "Marketing Manager", image: "/assets/stanley-smith.webp" }
 ];
 
 const AboutUs = () => {
@@ -126,8 +126,11 @@ const AboutUs = () => {
                   <div className="aspect-square overflow-hidden">
                     <img 
                       src={member.image} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover"
+                      alt={`${member.name} - ${member.role}`}
+                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
+                      loading="lazy"
+                      width="300"
+                      height="300"
                     />
                   </div>
                   <div className="p-4">
