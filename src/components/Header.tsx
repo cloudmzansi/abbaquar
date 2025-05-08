@@ -6,6 +6,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -17,6 +18,7 @@ const Header = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
+          setIsScrolled(currentScrollY > 20);
           if (currentScrollY < 50) {
             setShowHeader(true);
           } else if (currentScrollY > lastScrollY) {
@@ -36,11 +38,13 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-[#0A2647] shadow-sm z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'} fixed w-full`}
+      className={`glass-nav shadow-lg z-50 transition-all duration-300 ${
+        showHeader ? 'translate-y-0' : '-translate-y-full'
+      } ${isScrolled ? 'glass-nav' : 'bg-transparent'} fixed w-full`}
       style={{ willChange: 'transform' }}
     >
       <div className="container-custom py-4">
-        <div className="flex justify-between items-center">
+        <nav className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img 
@@ -54,59 +58,72 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 items-center font-bold">
-            <Link to="/" className="text-white hover:text-[#D4A017] transition-colors">
-              Home
-            </Link>
-            <Link to="/about-us" className="text-white hover:text-[#D4A017] transition-colors">
-              About Us
-            </Link>
-            <Link to="/activities" className="text-white hover:text-[#D4A017] transition-colors">
-              Activities
-            </Link>
-            <Link to="/gallery" className="text-white hover:text-[#D4A017] transition-colors">
-              Gallery
-            </Link>
-            <Link to="/contact" className="text-white hover:text-[#D4A017] transition-colors">
-              Contact
-            </Link>
-            <a href="/#donate" className="ml-4 px-6 py-2 rounded-md font-bold bg-[#D4A017] text-white hover:bg-opacity-90 transition-colors shadow-md">
-              Donate
-            </a>
-          </nav>
+          <div className="hidden md:flex items-center">
+            <div className="flex space-x-1 items-center rounded-full glass-effect px-4 py-2">
+              <Link to="/" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+                Home
+              </Link>
+              <Link to="/about-us" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+                About Us
+              </Link>
+              <Link to="/activities" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+                Activities
+              </Link>
+              <Link to="/gallery" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+                Gallery
+              </Link>
+              <Link to="/contact" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+                Contact
+              </Link>
+              <a 
+                href="/#donate" 
+                className="ml-2 px-6 py-2 rounded-full font-bold bg-[#D4A017] text-white hover:bg-opacity-90 transition-all shadow-md"
+              >
+                Donate
+              </a>
+            </div>
+          </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={toggleMobileMenu}>
+          <button 
+            className="md:hidden rounded-full p-2 hover:bg-white/10 transition-colors"
+            onClick={toggleMobileMenu}
+          >
             {mobileMenuOpen ? (
               <X className="h-6 w-6 text-white" />
             ) : (
               <Menu className="h-6 w-6 text-white" />
             )}
           </button>
-        </div>
+        </nav>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 flex flex-col space-y-4 font-bold">
-            <Link to="/" className="text-white hover:text-[#D4A017] transition-colors">
-              Home
-            </Link>
-            <Link to="/about-us" className="text-white hover:text-[#D4A017] transition-colors">
-              About Us
-            </Link>
-            <Link to="/activities" className="text-white hover:text-[#D4A017] transition-colors">
-              Activities
-            </Link>
-            <Link to="/gallery" className="text-white hover:text-[#D4A017] transition-colors">
-              Gallery
-            </Link>
-            <Link to="/contact" className="text-white hover:text-[#D4A017] transition-colors">
-              Contact
-            </Link>
-            <a href="/#donate" className="inline-block w-auto self-start px-4 py-2 rounded-md font-bold bg-[#D4A017] text-white hover:bg-opacity-90 transition-colors shadow-md">
-              Donate
-            </a>
-          </nav>
+          <div className="md:hidden mt-4 rounded-2xl glass-nav-mobile overflow-hidden">
+            <nav className="py-4 px-4 flex flex-col space-y-2">
+              <Link to="/" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+                Home
+              </Link>
+              <Link to="/about-us" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+                About Us
+              </Link>
+              <Link to="/activities" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+                Activities
+              </Link>
+              <Link to="/gallery" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+                Gallery
+              </Link>
+              <Link to="/contact" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-full hover:bg-white/10">
+                Contact
+              </Link>
+              <a 
+                href="/#donate" 
+                className="px-6 py-2 rounded-full font-bold bg-[#D4A017] text-white hover:bg-opacity-90 transition-all shadow-md text-center"
+              >
+                Donate
+              </a>
+            </nav>
+          </div>
         )}
       </div>
     </header>
