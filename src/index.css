@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Swiper Pagination Styles */
+.swiper-pagination-bullet {
+  @apply bg-[#D72660]/40 !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-[#D72660] !important;
+}
+
 @layer base {
   html, body {
     @apply min-h-screen w-full overflow-x-hidden;

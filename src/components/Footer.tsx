@@ -11,10 +11,10 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
               <img 
                 src="/assets/abbaquar-logo.webp" 
-                alt="RaiseUp Logo" 
+                alt="Abbaquar Logo" 
                 className="h-10 w-10 rounded-lg"
               />
-              <span className="text-xl font-bold">RaiseUp</span>
+              <span className="text-xl font-bold">Abbaquar - San Dream Centre</span>
             </div>
             <p className="mb-6 text-gray-300 text-sm leading-relaxed">
               We are a cultural organization geared towards assisting, uplifting and rebuilding our community.

@@ -56,7 +56,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-[#073366] z-50 transition-all duration-300 ${
+      className={`bg-[#073366] z-[100] transition-all duration-300 ${
         showHeader ? 'translate-y-0' : '-translate-y-full'
       } fixed w-full border-b border-white/40`}
       style={{ willChange: 'transform' }}
@@ -68,9 +68,9 @@ const Header = () => {
               <img 
                 src="/assets/abbaquar-logo.webp" 
                 alt="Abbaquar Logo" 
-                className="h-20 mr-3 rounded-2xl" 
-                width="80" 
-                height="80" 
+                className="h-16 mr-3 rounded-2xl" 
+                width="64" 
+                height="64" 
               />
             </Link>
           </div>
@@ -106,7 +106,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden rounded-full p-2 hover:bg-white/10 transition-all"
+            className="md:hidden rounded-full p-2 hover:bg-white/10 transition-all z-[101]"
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
@@ -120,11 +120,11 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div 
-          className={`md:hidden fixed inset-x-0 top-[96px] bottom-0 bg-[#073366] border-t border-white/40 transition-transform duration-300 ${
+          className={`md:hidden fixed inset-x-0 top-[84px] bottom-0 bg-[#073366] border-t border-white/40 transition-transform duration-300 z-[99] ${
             mobileMenuOpen ? 'translate-y-0' : 'translate-y-full'
           }`}
         >
-          <nav className="container-custom py-6 flex flex-col space-y-2 overflow-y-auto h-full">
+          <nav className="container-custom py-6 flex flex-col space-y-2 overflow-y-auto max-h-[calc(100vh-84px)]">
             <Link 
               to="/" 
               className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-center"
