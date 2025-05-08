@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Delete, HttpException } from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete, HttpException, Param } from '@nestjs/common';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -36,6 +36,19 @@ export class EventsController {
       return { success: true };
     } catch (err) {
       throw new HttpException('Failed to clear events', 500);
+    }
+  }
+
+  @Delete(':id')
+  deleteEvent(@Param('id') id: string) {
+    try {
+      const data = fs.readFileSync(EVENTS_PATH, 'utf-8');
+      let events = JSON.parse(data);
+      events = events.filter((e: any) => e.id !== id);
+      fs.writeFileSync(EVENTS_PATH, JSON.stringify(events, null, 2));
+      return { success: true };
+    } catch (err) {
+      throw new HttpException('Failed to delete event', 500);
     }
   }
 } 

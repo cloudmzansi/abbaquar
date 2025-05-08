@@ -2,6 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
 import { AuthMiddleware } from './auth.middleware';
+import * as express from 'express';
+import * as path from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -11,6 +13,9 @@ async function bootstrap() {
     origin: process.env.FRONTEND_URL,
     credentials: true,
   });
+
+  // Serve static files from /public/uploads as /assets
+  app.use('/assets', express.static(path.join(__dirname, '../../public/uploads')));
 
   // Enable validation pipes
   app.useGlobalPipes(

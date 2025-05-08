@@ -63,4 +63,25 @@ export class PhotosController {
       throw new HttpException('Failed to clear photos', 500);
     }
   }
+
+  @Delete('delete')
+  deletePhoto(@Body() body: { filename: string }) {
+    try {
+      const { filename } = body;
+      if (!filename) throw new HttpException('Filename required', 400);
+      // Remove file from uploads
+      const filepath = path.join(UPLOADS_PATH, filename);
+      if (fs.existsSync(filepath)) {
+        fs.unlinkSync(filepath);
+      }
+      // Remove from photos.json
+      const data = fs.readFileSync(PHOTOS_PATH, 'utf-8');
+      let photos = JSON.parse(data);
+      photos = photos.filter((p: any) => p.filename !== filename);
+      fs.writeFileSync(PHOTOS_PATH, JSON.stringify(photos, null, 2));
+      return { success: true };
+    } catch (err) {
+      throw new HttpException('Failed to delete photo', 500);
+    }
+  }
 } 
