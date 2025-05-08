@@ -81,7 +81,7 @@ const Contact = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-[#073366] pb-20 pt-32">
+        <section className="bg-[#073366] pb-20 pt-28 md:pt-[120px]">
           <div className="container-custom">
             <h1 className="text-[#F5F5F0] text-4xl md:text-5xl font-bold mb-6 text-center">Contact Us</h1>
             <p className="text-[#E0E9FF] text-xl text-center max-w-3xl mx-auto">
