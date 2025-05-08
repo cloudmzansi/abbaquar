@@ -1,16 +1,16 @@
 import { createRoot } from 'react-dom/client'
-import { Analytics } from '@vercel/analytics/react'
+import { inject } from '@vercel/analytics';
 import App from './App.tsx'
 import './index.css'
 import { reportWebVitals } from './reportWebVitals'
 
+// Initialize Vercel Analytics
+inject();
+
 const root = createRoot(document.getElementById("root")!);
 
 root.render(
-  <>
-    <App />
-    <Analytics />
-  </>
+  <App />
 );
 
 // If you want to start measuring performance in your app, pass a function
