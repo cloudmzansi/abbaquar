@@ -18,11 +18,10 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     rollupOptions: {
-      external: ['@vercel/analytics/react', '@tanstack/react-query'],
+      external: ['@vercel/analytics/react'],
       output: {
         globals: {
-          '@vercel/analytics/react': 'vercelAnalytics',
-          '@tanstack/react-query': 'reactQuery'
+          '@vercel/analytics/react': 'vercelAnalytics'
         }
       }
     },
@@ -30,7 +29,7 @@ export default defineConfig(({ mode }) => ({
       include: [/node_modules/],
     },
     optimizeDeps: {
-      include: ['swiper', 'leaflet']
+      include: ['swiper', 'swiper/react', 'swiper/modules', 'leaflet']
     }
   },
   css: {
