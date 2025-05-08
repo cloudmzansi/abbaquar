@@ -32,7 +32,7 @@ export default defineConfig(({ mode }) => ({
       include: [/node_modules/],
     },
     optimizeDeps: {
-      include: ['swiper', 'swiper/react', 'swiper/modules']
+      include: ['swiper', 'swiper/react', 'swiper/modules', 'leaflet']
     }
   },
   css: {
@@ -41,5 +41,6 @@ export default defineConfig(({ mode }) => ({
         additionalData: `@import 'leaflet/dist/leaflet.css';`
       }
     }
-  }
+  },
+  assetsInclude: ['**/*.png']
 }));
