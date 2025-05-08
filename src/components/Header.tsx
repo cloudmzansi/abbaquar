@@ -40,7 +40,7 @@ const Header = () => {
     <header
       className={`bg-[#073366] z-50 transition-all duration-300 ${
         showHeader ? 'translate-y-0' : '-translate-y-full'
-      } absolute w-full border-b border-white/20`}
+      } absolute w-full border-b border-white/40`}
       style={{ willChange: 'transform' }}
     >
       <div className="container-custom py-3">
@@ -58,8 +58,8 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center">
-            <div className="flex items-center space-x-1 px-4 border-r border-white/20">
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="flex items-center space-x-1">
               <Link to="/" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
                 Home
               </Link>
@@ -75,8 +75,6 @@ const Header = () => {
               <Link to="/contact" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
                 Contact
               </Link>
-            </div>
-            <div className="flex items-center pl-4">
               <a 
                 href="/#donate" 
                 className="px-6 py-2.5 rounded-full font-semibold bg-[#D72660] text-white hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg active:scale-100"
@@ -102,7 +100,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 bg-[#073366] rounded-2xl border border-white/20 shadow-lg">
+          <div className="md:hidden mt-4 bg-[#073366] rounded-2xl border border-white/40 shadow-lg">
             <nav className="py-4 px-4 flex flex-col space-y-2">
               <Link to="/" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10 text-center">
                 Home
