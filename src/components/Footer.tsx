@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-react'
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1B4332] text-white pt-16 pb-8">
+    <footer className="bg-[#073366] text-white pt-16 pb-8">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* About Section */}
@@ -22,19 +22,19 @@ const Footer = () => {
             <div className="flex flex-col space-y-4">
               <div className="flex items-start">
                 <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg mr-3">
-                  <MapPin className="h-5 w-5 text-[#40916C]" />
+                  <MapPin className="h-5 w-5 text-[#D72660]" />
                 </div>
                 <span className="text-gray-300 text-sm">61 Gardenia Road, Wentworth,<br />Durban, 4052</span>
               </div>
               <div className="flex items-start">
                 <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg mr-3">
-                  <Phone className="h-5 w-5 text-[#40916C]" />
+                  <Phone className="h-5 w-5 text-[#D72660]" />
                 </div>
                 <span className="text-gray-300 text-sm">084 251 5740</span>
               </div>
               <div className="flex items-start">
                 <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg mr-3">
-                  <Mail className="h-5 w-5 text-[#40916C]" />
+                  <Mail className="h-5 w-5 text-[#D72660]" />
                 </div>
                 <span className="text-gray-300 text-sm break-all">info@abbaquar-sandreamcentre.org</span>
               </div>
@@ -81,26 +81,25 @@ const Footer = () => {
           {/* Stay Connected */}
           <div>
             <h3 className="text-lg font-semibold mb-6">Stay Connected</h3>
-            <h3 className="text-xl font-semibold mb-4">Stay Connected</h3>
             <p className="mb-4 text-gray-300">
               Join our community to receive updates about our activities and events.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-abbaquar-accent flex items-center justify-center hover:bg-opacity-80 transition-colors">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-[#D72660] flex items-center justify-center hover:bg-opacity-80 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-abbaquar-accent flex items-center justify-center hover:bg-opacity-80 transition-colors">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-[#D72660] flex items-center justify-center hover:bg-opacity-80 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-abbaquar-accent flex items-center justify-center hover:bg-opacity-80 transition-colors">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-[#D72660] flex items-center justify-center hover:bg-opacity-80 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white mt-8 pt-6">
-          <p className="text-center text-white-400">
+        <div className="border-t border-white/20 mt-8 pt-6">
+          <p className="text-center text-gray-300">
             Copyright © 2025 Abbaquar - San Dream Centre. All Rights Reserved.
           </p>
         </div>

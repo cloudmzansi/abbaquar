@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Calendar, Clock, MapPin } from 'lucide-react';
-import Swiper from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -95,11 +95,12 @@ const UpcomingEvents = () => {
               slidesPerView={1.2}
               centeredSlides={true}
               pagination={{ clickable: true }}
+              className="w-full"
             >
               {events.map((event, idx) => (
-                <div key={idx} className="swiper-slide">
+                <SwiperSlide key={idx}>
                   <EventCard event={event} />
-                </div>
+                </SwiperSlide>
               ))}
             </Swiper>
           </div>

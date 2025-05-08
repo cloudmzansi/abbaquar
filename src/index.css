@@ -5,6 +5,18 @@
 @tailwind utilities;
 
 @layer base {
+  html, body {
+    @apply min-h-screen w-full overflow-x-hidden;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+
+  #root {
+    @apply min-h-screen flex flex-col;
+  }
+
   :root {
     --background: 0 0% 98%;
     --foreground: 222.2 84% 4.9%;
@@ -88,10 +100,6 @@
 @layer base {
   * {
     @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground font-poppins;
   }
 
   h1, h2, h3, h4, h5, h6 {
