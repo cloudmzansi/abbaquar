@@ -205,7 +205,6 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold text-[#F5F5F0]">Email</h3>
                         <p className="text-[#E0E9FF]">olivia@abbaquarsandreamcentre.co.za</p>
-                        <p className="text-[#E0E9FF]">info@abbaquar-sandreamcentre.co.za</p>
                       </div>
                     </div>
                     
