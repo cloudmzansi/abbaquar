@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import '@/styles/leaflet.css';
 
 // Fix for default marker icons
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -48,7 +49,7 @@ export default function Map({ className = '' }: MapProps) {
 
   return (
     <div className={className}>
-      <div id="map" className="w-full h-full rounded-lg" style={{ zIndex: 1 }} />
+      <div id="map" className="w-full h-full rounded-lg" />
     </div>
   );
 } 

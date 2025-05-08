@@ -1,8 +1,9 @@
-import { createRoot } from 'react-dom/client'
+import { createRoot } from 'react-dom/client';
 import { inject } from '@vercel/analytics';
-import App from './App.tsx'
-import './index.css'
-import { reportWebVitals } from './reportWebVitals'
+import App from './App.tsx';
+import './index.css';
+import '@/styles/leaflet.css';
+import { reportWebVitals } from './reportWebVitals';
 
 // Initialize Vercel Analytics
 inject();
