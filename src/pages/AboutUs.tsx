@@ -120,7 +120,7 @@ const AboutUs = () => {
           <div className="container-custom">
             <h2 className="text-3xl font-bold mb-12 text-abbaquar-purple text-center">Our Team</h2>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {teamMembers.map((member, index) => (
                 <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all text-center">
                   <div className="aspect-square overflow-hidden">
@@ -129,13 +129,13 @@ const AboutUs = () => {
                       alt={`${member.name} - ${member.role}`}
                       className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
                       loading="lazy"
-                      width="300"
-                      height="300"
+                      width="240"
+                      height="240"
                     />
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-bold text-abbaquar-dark">{member.name}</h3>
-                    <p className="text-gray-600">{member.role}</p>
+                  <div className="p-3">
+                    <h3 className="font-bold text-abbaquar-dark text-sm">{member.name}</h3>
+                    <p className="text-gray-600 text-xs">{member.role}</p>
                   </div>
                 </div>
               ))}
