@@ -50,15 +50,15 @@ const Header = () => {
               <img 
                 src="/assets/abbaquar-logo.webp" 
                 alt="Abbaquar Logo" 
-                className="h-14 mr-3 rounded-2xl" 
-                width="56" 
-                height="56" 
+                className="h-16 mr-3 rounded-2xl" 
+                width="64" 
+                height="64" 
               />
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center">
             <div className="flex items-center space-x-1">
               <Link to="/" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
                 Home
@@ -75,6 +75,8 @@ const Header = () => {
               <Link to="/contact" className="px-4 py-2 text-white/90 hover:text-white transition-all rounded-lg hover:bg-white/10">
                 Contact
               </Link>
+            </div>
+            <div className="flex items-center ml-8">
               <a 
                 href="/#donate" 
                 className="px-6 py-2.5 rounded-full font-semibold bg-[#D72660] text-white hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg active:scale-100"
