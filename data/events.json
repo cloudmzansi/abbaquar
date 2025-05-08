@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": 1746741095676,
+    "title": "legal aid clinic",
+    "date": "2025-05-12",
+    "fromTime": "10:00",
+    "toTime": "14:00",
+    "venue": "Dream Centre",
+    "description": "Free legal advice for community members. Book your slot in advance."
+  }
+]
