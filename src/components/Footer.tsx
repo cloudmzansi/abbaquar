@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -63,17 +63,16 @@ const Footer = () => {
             <p className="mb-4 text-gray-300">
               Join our community to receive updates about our activities and events.
             </p>
-            <div className="flex space-x-2">
-              {/* Social Icons placeholder - can be replaced with actual social icons */}
-              <div className="h-10 w-10 rounded-full bg-abbaquar-accent flex items-center justify-center">
-                <span>F</span>
-              </div>
-              <div className="h-10 w-10 rounded-full bg-abbaquar-accent flex items-center justify-center">
-                <span>T</span>
-              </div>
-              <div className="h-10 w-10 rounded-full bg-abbaquar-accent flex items-center justify-center">
-                <span>I</span>
-              </div>
+            <div className="flex space-x-4">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-abbaquar-accent flex items-center justify-center hover:bg-opacity-80 transition-colors">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-abbaquar-accent flex items-center justify-center hover:bg-opacity-80 transition-colors">
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-abbaquar-accent flex items-center justify-center hover:bg-opacity-80 transition-colors">
+                <Instagram className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>
