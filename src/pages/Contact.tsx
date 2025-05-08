@@ -6,6 +6,7 @@ import { useToast } from '@/hooks/use-toast';
 import { ContactFormData } from '@/types';
 import { submitContactForm } from '@/api/contact';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import Map from '@/components/Map';
 
 const Contact = () => {
   const [agreeToTerms, setAgreeToTerms] = useState(false);
@@ -204,7 +205,7 @@ const Contact = () => {
                       <Mail className="h-6 w-6 text-[#D4A017] mr-3 mt-1" />
                       <div>
                         <h3 className="font-semibold text-[#F5F5F0]">Email</h3>
-                        <p className="text-[#E0E9FF]">olivia@abbaquarsandreamcentre.co.za</p>
+                        <p className="text-[#E0E9FF]">info@abbaquar-sandreamcentre.co.za</p>
                       </div>
                     </div>
                     
@@ -241,11 +242,11 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Map Section (Placeholder) */}
+        {/* Map Section */}
         <section className="py-8">
           <div className="container-custom">
-            <div className="bg-gray-300 h-96 rounded-lg flex items-center justify-center">
-              <p className="text-gray-600">Map placeholder - Google Maps integration would go here</p>
+            <div className="h-[500px] rounded-lg overflow-hidden">
+              <Map />
             </div>
           </div>
         </section>
