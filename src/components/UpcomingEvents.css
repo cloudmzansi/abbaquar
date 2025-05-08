@@ -5,8 +5,7 @@
   opacity: 1;
 }
 
-.events-swiper .swiper-pagination-bullet-active,
-.events-swiper .swiper-pagination-bullet-active-purple {
+.events-swiper .swiper-pagination-bullet-active {
   background: #8A4BA3;
   opacity: 1;
 }
