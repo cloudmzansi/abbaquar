@@ -50,7 +50,7 @@ const Header = () => {
               <img 
                 src="/assets/abbaquar-logo.webp" 
                 alt="Abbaquar Logo" 
-                className="h-16 mr-3" 
+                className="h-16 mr-3 rounded-2xl" 
                 width="64" 
                 height="64" 
               />
@@ -59,25 +59,25 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center">
-            <div className="flex space-x-1 items-center">
-              <Link to="/" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-lg hover:bg-white/10">
+            <div className="flex space-x-2 items-center">
+              <Link to="/" className="px-6 py-2.5 text-white hover:text-[#D4A017] transition-all rounded-full hover:bg-white/10">
                 Home
               </Link>
-              <Link to="/about-us" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-lg hover:bg-white/10">
+              <Link to="/about-us" className="px-6 py-2.5 text-white hover:text-[#D4A017] transition-all rounded-full hover:bg-white/10">
                 About Us
               </Link>
-              <Link to="/activities" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-lg hover:bg-white/10">
+              <Link to="/activities" className="px-6 py-2.5 text-white hover:text-[#D4A017] transition-all rounded-full hover:bg-white/10">
                 Activities
               </Link>
-              <Link to="/gallery" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-lg hover:bg-white/10">
+              <Link to="/gallery" className="px-6 py-2.5 text-white hover:text-[#D4A017] transition-all rounded-full hover:bg-white/10">
                 Gallery
               </Link>
-              <Link to="/contact" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-lg hover:bg-white/10">
+              <Link to="/contact" className="px-6 py-2.5 text-white hover:text-[#D4A017] transition-all rounded-full hover:bg-white/10">
                 Contact
               </Link>
               <a 
                 href="/#donate" 
-                className="ml-4 px-8 py-3 rounded-full font-semibold bg-[#D4A017] text-white hover:bg-[#D4A017]/90 transition-all transform hover:scale-105 hover:shadow-lg active:scale-100"
+                className="ml-2 px-8 py-2.5 rounded-full font-semibold bg-[#D72660] text-white hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg active:scale-100"
               >
                 Donate
               </a>
@@ -86,7 +86,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden rounded-lg p-2 hover:bg-white/10 transition-colors"
+            className="md:hidden rounded-full p-2 hover:bg-white/10 transition-all"
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
@@ -100,26 +100,26 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 bg-[#0A2647] rounded-lg border border-white/10">
+          <div className="md:hidden mt-4 bg-[#0A2647] rounded-2xl border border-white/10">
             <nav className="py-4 px-4 flex flex-col space-y-2">
-              <Link to="/" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-lg hover:bg-white/10">
+              <Link to="/" className="px-6 py-2.5 text-white hover:text-[#D4A017] transition-all rounded-full hover:bg-white/10 text-center">
                 Home
               </Link>
-              <Link to="/about-us" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-lg hover:bg-white/10">
+              <Link to="/about-us" className="px-6 py-2.5 text-white hover:text-[#D4A017] transition-all rounded-full hover:bg-white/10 text-center">
                 About Us
               </Link>
-              <Link to="/activities" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-lg hover:bg-white/10">
+              <Link to="/activities" className="px-6 py-2.5 text-white hover:text-[#D4A017] transition-all rounded-full hover:bg-white/10 text-center">
                 Activities
               </Link>
-              <Link to="/gallery" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-lg hover:bg-white/10">
+              <Link to="/gallery" className="px-6 py-2.5 text-white hover:text-[#D4A017] transition-all rounded-full hover:bg-white/10 text-center">
                 Gallery
               </Link>
-              <Link to="/contact" className="px-4 py-2 text-white hover:text-[#D4A017] transition-colors rounded-lg hover:bg-white/10">
+              <Link to="/contact" className="px-6 py-2.5 text-white hover:text-[#D4A017] transition-all rounded-full hover:bg-white/10 text-center">
                 Contact
               </Link>
               <a 
                 href="/#donate" 
-                className="px-8 py-3 rounded-full font-semibold bg-[#D4A017] text-white hover:bg-[#D4A017]/90 transition-all transform hover:scale-105 hover:shadow-lg active:scale-100 text-center"
+                className="px-8 py-2.5 rounded-full font-semibold bg-[#D72660] text-white hover:bg-opacity-90 transition-all transform hover:scale-105 hover:shadow-lg active:scale-100 text-center"
               >
                 Donate
               </a>
