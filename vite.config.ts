@@ -21,11 +21,10 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     rollupOptions: {
-      external: ['@vercel/analytics/react', 'leaflet'],
+      external: ['@vercel/analytics/react'],
       output: {
         globals: {
-          '@vercel/analytics/react': 'vercelAnalytics',
-          'leaflet': 'L'
+          '@vercel/analytics/react': 'vercelAnalytics'
         }
       }
     },
@@ -33,8 +32,14 @@ export default defineConfig(({ mode }) => ({
       include: [/node_modules/],
     },
     optimizeDeps: {
-      include: ['swiper', 'swiper/react', 'swiper/modules', 'leaflet']
-    },
-    assetsInclude: ['**/*.css'] // This ensures Leaflet's CSS is properly included
+      include: ['swiper', 'swiper/react', 'swiper/modules']
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      css: {
+        additionalData: `@import 'leaflet/dist/leaflet.css';`
+      }
+    }
   }
 }));
