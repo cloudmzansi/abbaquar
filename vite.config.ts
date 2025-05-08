@@ -18,10 +18,11 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     rollupOptions: {
-      external: ['@vercel/analytics/react'],
+      external: ['@vercel/analytics/react', '@tanstack/react-query'],
       output: {
         globals: {
-          '@vercel/analytics/react': 'vercelAnalytics'
+          '@vercel/analytics/react': 'vercelAnalytics',
+          '@tanstack/react-query': 'reactQuery'
         }
       }
     },
