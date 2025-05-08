@@ -34,26 +34,11 @@ const EventCard = ({ event }: { event: Event }) => (
           Upcoming
         </span>
       </div>
-
       <h3 className="text-xl font-semibold text-[#073366] mt-2">{event.title}</h3>
-
-      <div className="space-y-2">
-        <div className="flex items-center text-gray-600">
-          <Calendar className="h-4 w-4 mr-2" />
-          <span className="text-sm">{event.date}</span>
-        </div>
-        <div className="flex items-center text-gray-600">
-          <Clock className="h-4 w-4 mr-2" />
-          <span className="text-sm">{event.time}</span>
-        </div>
-        <div className="flex items-center text-gray-600">
-          <MapPin className="h-4 w-4 mr-2" />
-          <span className="text-sm">{event.venue}</span>
-        </div>
+      <div className="space-y-2 text-gray-600 whitespace-pre-line">
+        {event.date}\n{event.time}\n{event.venue}
       </div>
-
       <p className="text-gray-600 text-sm">{event.description}</p>
-      {event.image && <img src={event.image} alt={event.title} className="w-full h-32 object-cover rounded mt-2" />}
     </div>
   </div>
 );

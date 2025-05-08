@@ -397,16 +397,6 @@ export const AdminDashboard = () => {
                             />
                         </div>
                         <div className="flex-1">
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Image</label>
-                            <input
-                                type="file"
-                                accept="image/*"
-                                ref={eventImageRef}
-                                onChange={handleEventImageChange}
-                                className="block w-full text-sm text-gray-500 file:mr-4 file:rounded-full file:border-0 file:bg-green-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-green-700 hover:file:bg-green-100"
-                            />
-                        </div>
-                        <div className="flex-1">
                             <label className="block text-sm font-medium text-gray-700 mb-1">Display On</label>
                             <select
                                 name="displayOn"
@@ -443,9 +433,10 @@ export const AdminDashboard = () => {
                             events.map((event) => (
                                 <div key={event.id} className="rounded-lg border bg-[#f6f7f9] p-4 shadow-sm flex flex-col gap-2">
                                     <div className="font-bold text-lg text-[#1a2e22]">{event.title}</div>
-                                    <div className="text-gray-700">{event.date} {event.time} @ {event.venue}</div>
+                                    <div className="text-gray-700 whitespace-pre-line">
+                                        {event.date}\n{event.time}\n{event.venue}
+                                    </div>
                                     <div className="text-gray-700">{event.description}</div>
-                                    {event.image && <img src={event.image} alt="event" className="h-32 w-full object-cover rounded mb-2" />}
                                     <div className="text-xs text-gray-500">Display: {event.displayOn}</div>
                                     <div className="flex gap-2 mt-2">
                                         <button
