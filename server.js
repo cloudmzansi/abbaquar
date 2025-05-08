@@ -6,6 +6,7 @@ import fs from 'fs';
 import path, { join } from 'path';
 import { fileURLToPath } from 'url';
 import { exec } from 'child_process';
+import sharp from 'sharp';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -54,6 +55,15 @@ function autoCommit(file, message) {
   });
 }
 
+// Helper to convert and save image as webp
+async function saveAsWebp(file, destDir) {
+  const webpFilename = `${Date.now()}-${file.originalname.split('.')[0]}.webp`;
+  const webpPath = join(destDir, webpFilename);
+  await sharp(file.path).webp({ quality: 80 }).toFile(webpPath);
+  fs.unlinkSync(file.path); // Remove original upload
+  return webpFilename;
+}
+
 // API: Upload image
 app.post('/api/upload', upload.single('image'), (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
@@ -88,9 +98,17 @@ app.get('/api/activities', (req, res) => {
 });
 
 // API: Add activity/event
-app.post('/api/activities', upload.single('image'), (req, res) => {
+app.post('/api/activities', upload.single('image'), async (req, res) => {
   const { title, description, displayOn } = req.body;
-  const image = req.file ? `/uploads/${req.file.filename}` : '';
+  let image = '';
+  if (req.file) {
+    try {
+      const webpFilename = await saveAsWebp(req.file, uploadsDir);
+      image = `/uploads/${webpFilename}`;
+    } catch (err) {
+      return res.status(500).json({ error: 'Failed to process image' });
+    }
+  }
   fs.readFile(activitiesFile, 'utf-8', (err, data) => {
     if (err) return res.status(500).json({ error: 'Failed to read activities' });
     const activities = JSON.parse(data);
@@ -105,10 +123,18 @@ app.post('/api/activities', upload.single('image'), (req, res) => {
 });
 
 // API: Update activity/event
-app.put('/api/activities/:id', upload.single('image'), (req, res) => {
+app.put('/api/activities/:id', upload.single('image'), async (req, res) => {
   const id = Number(req.params.id);
   const { title, description, displayOn } = req.body;
-  const image = req.file ? `/uploads/${req.file.filename}` : undefined;
+  let image;
+  if (req.file) {
+    try {
+      const webpFilename = await saveAsWebp(req.file, uploadsDir);
+      image = `/uploads/${webpFilename}`;
+    } catch (err) {
+      return res.status(500).json({ error: 'Failed to process image' });
+    }
+  }
   fs.readFile(activitiesFile, 'utf-8', (err, data) => {
     if (err) return res.status(500).json({ error: 'Failed to read activities' });
     let activities = JSON.parse(data);
@@ -202,9 +228,17 @@ app.get('/api/photos', (req, res) => {
 });
 
 // API: Add photo
-app.post('/api/photos', upload.single('image'), (req, res) => {
+app.post('/api/photos', upload.single('image'), async (req, res) => {
   const { category } = req.body;
-  const image = req.file ? `/uploads/${req.file.filename}` : '';
+  let image = '';
+  if (req.file) {
+    try {
+      const webpFilename = await saveAsWebp(req.file, uploadsDir);
+      image = `/uploads/${webpFilename}`;
+    } catch (err) {
+      return res.status(500).json({ error: 'Failed to process image' });
+    }
+  }
   fs.readFile(photosFile, 'utf-8', (err, data) => {
     if (err) return res.status(500).json({ error: 'Failed to read photos' });
     const photos = JSON.parse(data);
