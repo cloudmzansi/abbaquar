@@ -3,6 +3,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useState } from 'react';
 import { LoadingSpinner } from './ui/loading-spinner';
 import { ContactFormData } from '@/types';
+import { submitContactForm } from '@/api/contact';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -38,17 +39,7 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
+      await submitContactForm(formData);
       
       setFormData({
         name: '',
