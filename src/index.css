@@ -5,9 +5,20 @@
 @tailwind utilities;
 
 /* Swiper Pagination Styles */
+.swiper {
+  padding-bottom: 3rem !important;
+}
+
+.swiper-pagination {
+  bottom: 0 !important;
+}
+
 .swiper-pagination-bullet {
   @apply bg-[#D72660]/40 !important;
   opacity: 1 !important;
+  width: 8px !important;
+  height: 8px !important;
+  margin: 0 6px !important;
 }
 
 .swiper-pagination-bullet-active {

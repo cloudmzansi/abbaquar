@@ -11,17 +11,14 @@ const Header = () => {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
-    // Prevent body scroll when menu is open
     document.body.style.overflow = !mobileMenuOpen ? 'hidden' : 'auto';
   };
 
-  // Close mobile menu and reset body overflow when route changes
   useEffect(() => {
     setMobileMenuOpen(false);
     document.body.style.overflow = 'auto';
   }, [location]);
 
-  // Cleanup effect
   useEffect(() => {
     return () => {
       document.body.style.overflow = 'auto';
@@ -39,6 +36,7 @@ const Header = () => {
             setShowHeader(true);
           } else if (currentScrollY > lastScrollY) {
             setShowHeader(false);
+            setMobileMenuOpen(false);
           } else {
             setShowHeader(true);
           }
@@ -59,10 +57,9 @@ const Header = () => {
       className={`bg-[#073366] z-[100] transition-all duration-300 ${
         showHeader ? 'translate-y-0' : '-translate-y-full'
       } fixed w-full border-b border-white/40`}
-      style={{ willChange: 'transform' }}
     >
       <div className="container-custom py-3">
-        <nav className="flex justify-between items-center">
+        <nav className="flex justify-between items-center relative">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <img 
@@ -120,9 +117,9 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div 
-          className={`md:hidden fixed inset-x-0 top-[84px] bottom-0 bg-[#073366] border-t border-white/40 transition-transform duration-300 z-[99] ${
-            mobileMenuOpen ? 'translate-y-0' : 'translate-y-full'
-          }`}
+          className={`fixed inset-x-0 top-[84px] bottom-0 bg-[#073366] border-t border-white/40 transition-transform duration-300 transform md:hidden ${
+            mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+          } z-[99]`}
         >
           <nav className="container-custom py-6 flex flex-col space-y-2 overflow-y-auto max-h-[calc(100vh-84px)]">
             <Link 
