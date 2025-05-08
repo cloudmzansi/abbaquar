@@ -28,9 +28,13 @@ app.use('/uploads', express.static(join(__dirname, 'public/uploads')));
 const uploadsDir = join(__dirname, 'public/uploads');
 const dataDir = join(__dirname, 'data');
 const activitiesFile = join(dataDir, 'activities.json');
+const eventsFile = join(dataDir, 'events.json');
+const photosFile = join(dataDir, 'photos.json');
 if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 if (!fs.existsSync(activitiesFile)) fs.writeFileSync(activitiesFile, '[]');
+if (!fs.existsSync(eventsFile)) fs.writeFileSync(eventsFile, '[]');
+if (!fs.existsSync(photosFile)) fs.writeFileSync(photosFile, '[]');
 
 // Multer setup
 const storage = multer.diskStorage({
@@ -73,12 +77,13 @@ app.get('/api/activities', (req, res) => {
 });
 
 // API: Add activity/event
-app.post('/api/activities', (req, res) => {
-  const activity = req.body;
+app.post('/api/activities', upload.single('image'), (req, res) => {
+  const { title, description, displayOn } = req.body;
+  const image = req.file ? `/uploads/${req.file.filename}` : '';
   fs.readFile(activitiesFile, 'utf-8', (err, data) => {
     if (err) return res.status(500).json({ error: 'Failed to read activities' });
     const activities = JSON.parse(data);
-    activity.id = Date.now();
+    const activity = { id: Date.now(), title, description, image, displayOn };
     activities.push(activity);
     fs.writeFile(activitiesFile, JSON.stringify(activities, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to save activity' });
@@ -88,16 +93,17 @@ app.post('/api/activities', (req, res) => {
 });
 
 // API: Update activity/event
-app.put('/api/activities/:id', (req, res) => {
+app.put('/api/activities/:id', upload.single('image'), (req, res) => {
   const id = Number(req.params.id);
-  const updated = req.body;
+  const { title, description, displayOn } = req.body;
+  const image = req.file ? `/uploads/${req.file.filename}` : undefined;
   fs.readFile(activitiesFile, 'utf-8', (err, data) => {
     if (err) return res.status(500).json({ error: 'Failed to read activities' });
     let activities = JSON.parse(data);
-    activities = activities.map(a => (a.id === id ? { ...a, ...updated } : a));
+    activities = activities.map(a => a.id === id ? { ...a, title, description, displayOn, image: image || a.image } : a);
     fs.writeFile(activitiesFile, JSON.stringify(activities, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to update activity' });
-      res.json(updated);
+      res.json(activities.find(a => a.id === id));
     });
   });
 });
@@ -112,6 +118,84 @@ app.delete('/api/activities/:id', (req, res) => {
     fs.writeFile(activitiesFile, JSON.stringify(activities, null, 2), err2 => {
       if (err2) return res.status(500).json({ error: 'Failed to delete activity' });
       res.json({ success: true });
+    });
+  });
+});
+
+// API: List events
+app.get('/api/events', (req, res) => {
+  fs.readFile(eventsFile, 'utf-8', (err, data) => {
+    if (err) return res.status(500).json({ error: 'Failed to read events' });
+    res.json(JSON.parse(data));
+  });
+});
+
+// API: Add event
+app.post('/api/events', upload.single('image'), (req, res) => {
+  const { title, date, time, venue, description, displayOn } = req.body;
+  const image = req.file ? `/uploads/${req.file.filename}` : '';
+  fs.readFile(eventsFile, 'utf-8', (err, data) => {
+    if (err) return res.status(500).json({ error: 'Failed to read events' });
+    const events = JSON.parse(data);
+    const event = { id: Date.now(), title, date, time, venue, description, image, displayOn };
+    events.push(event);
+    fs.writeFile(eventsFile, JSON.stringify(events, null, 2), err2 => {
+      if (err2) return res.status(500).json({ error: 'Failed to save event' });
+      res.json(event);
+    });
+  });
+});
+
+// API: Update event
+app.put('/api/events/:id', upload.single('image'), (req, res) => {
+  const id = Number(req.params.id);
+  const { title, date, time, venue, description, displayOn } = req.body;
+  const image = req.file ? `/uploads/${req.file.filename}` : undefined;
+  fs.readFile(eventsFile, 'utf-8', (err, data) => {
+    if (err) return res.status(500).json({ error: 'Failed to read events' });
+    let events = JSON.parse(data);
+    events = events.map(e => e.id === id ? { ...e, title, date, time, venue, description, displayOn, image: image || e.image } : e);
+    fs.writeFile(eventsFile, JSON.stringify(events, null, 2), err2 => {
+      if (err2) return res.status(500).json({ error: 'Failed to update event' });
+      res.json(events.find(e => e.id === id));
+    });
+  });
+});
+
+// API: Delete event
+app.delete('/api/events/:id', (req, res) => {
+  const id = Number(req.params.id);
+  fs.readFile(eventsFile, 'utf-8', (err, data) => {
+    if (err) return res.status(500).json({ error: 'Failed to read events' });
+    let events = JSON.parse(data);
+    events = events.filter(e => e.id !== id);
+    fs.writeFile(eventsFile, JSON.stringify(events, null, 2), err2 => {
+      if (err2) return res.status(500).json({ error: 'Failed to delete event' });
+      res.json({ success: true });
+    });
+  });
+});
+
+// API: List photos
+app.get('/api/photos', (req, res) => {
+  fs.readFile(photosFile, 'utf-8', (err, data) => {
+    if (err) return res.status(500).json({ error: 'Failed to read photos' });
+    res.json(JSON.parse(data));
+  });
+});
+
+// API: Add photo
+app.post('/api/photos', upload.single('image'), (req, res) => {
+  const { category } = req.body;
+  const image = req.file ? `/uploads/${req.file.filename}` : '';
+  fs.readFile(photosFile, 'utf-8', (err, data) => {
+    if (err) return res.status(500).json({ error: 'Failed to read photos' });
+    const photos = JSON.parse(data);
+    const photo = { id: Date.now(), image, category };
+    photos.push(photo);
+    fs.writeFile(photosFile, JSON.stringify(photos, null, 2), err2 => {
+      if (err2) return res.status(500).json({ error: 'Failed to save photo' });
+      res.json(photo);
     });
   });
 });
