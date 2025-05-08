@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -11,15 +10,15 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
-  { id: 1, src: "/placeholder.svg", alt: "Children at a Christmas party", category: "Events" },
-  { id: 2, src: "/placeholder.svg", alt: "Dance classes", category: "Activities" },
-  { id: 3, src: "/placeholder.svg", alt: "Karate lessons", category: "Activities" },
-  { id: 4, src: "/placeholder.svg", alt: "Food parcel distribution", category: "Community" },
-  { id: 5, src: "/placeholder.svg", alt: "Movie night", category: "Events" },
-  { id: 6, src: "/placeholder.svg", alt: "Ballet classes", category: "Activities" },
-  { id: 7, src: "/placeholder.svg", alt: "Law clinic session", category: "Community" },
-  { id: 8, src: "/placeholder.svg", alt: "Pensioners Christmas party", category: "Events" },
-  { id: 9, src: "/placeholder.svg", alt: "Community members", category: "Community" },
+  { id: 1, src: "/assets/children-christmas-party.webp", alt: "Children at a Christmas party", category: "Events" },
+  { id: 2, src: "/assets/dance-classes.webp", alt: "Dance classes", category: "Activities" },
+  { id: 3, src: "/assets/karate.webp", alt: "Karate lessons", category: "Activities" },
+  { id: 4, src: "/assets/food-parcels.webp", alt: "Food parcel distribution", category: "Community" },
+  { id: 5, src: "/assets/movie-night.webp", alt: "Movie night", category: "Events" },
+  { id: 6, src: "/assets/ballet-classes.webp", alt: "Ballet classes", category: "Activities" },
+  { id: 7, src: "/assets/law-clinic.webp", alt: "Law clinic session", category: "Community" },
+  { id: 8, src: "/assets/pensioners-christmas-party.webp", alt: "Pensioners Christmas party", category: "Events" },
+  { id: 9, src: "/assets/community.webp", alt: "Community members", category: "Community" },
 ];
 
 const Gallery = () => {
@@ -34,13 +33,19 @@ const Gallery = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <div className="bg-abbaquar-light py-12">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-abbaquar-purple to-purple-800 text-white py-20">
           <div className="container-custom">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center text-abbaquar-purple">Gallery</h1>
-            <p className="text-lg text-center max-w-3xl mx-auto text-gray-600 mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Gallery</h1>
+            <p className="text-xl text-center max-w-3xl mx-auto">
               Browse through images of our activities, events, and community outreach programs.
             </p>
-            
+          </div>
+        </section>
+
+        {/* Gallery Content */}
+        <section className="py-16">
+          <div className="container-custom">
             {/* Filter Buttons */}
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               {categories.map(category => (
@@ -82,7 +87,7 @@ const Gallery = () => {
               ))}
             </div>
           </div>
-        </div>
+        </section>
       </main>
       <Footer />
     </div>

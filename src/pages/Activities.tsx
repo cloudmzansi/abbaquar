@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,55 +16,55 @@ const activities: Activity[] = [
     id: 1,
     title: "Pensioners Christmas Party",
     description: "For pensioners from the community. Morning tea, with sandwiches. Activities – Dancing Competition. Lucky Draws Lunch was served.",
-    image: "/placeholder.svg"
+    image: "/assets/pensioners-christmas-party.webp"
   },
   {
     id: 2,
     title: "Movie Night",
     description: "It is free. Reintroduced family time. To help strengthen family bonds. Made children feel included. Help strengthen community bonds.",
-    image: "/placeholder.svg"
+    image: "/assets/movie-night.webp"
   },
   {
     id: 3,
     title: "Law Clinic",
     description: "Hosted by Pro bono Lawyer Maintenance Law Late birth Registration Child Custody and Access Foster Care and Adoption Wills and Estates",
-    image: "/placeholder.svg"
+    image: "/assets/law-clinic.webp"
   },
   {
     id: 4,
     title: "Karate",
     description: "Karate practice strengthens the mind. Develops Composure. Develops self confidence. Improves Co-Ordination. Teaches balance and co-ordination. Teaches humility and honor.",
-    image: "/placeholder.svg"
+    image: "/assets/karate.webp"
   },
   {
     id: 5,
     title: "Food Parcels",
     description: "Food Parcels for the underprivileged families in the community. Basic foods were provided including vegetables and Chicken Covid pack for each family.",
-    image: "/placeholder.svg"
+    image: "/assets/food-parcels.webp"
   },
   {
     id: 6,
     title: "Dance Classes",
     description: "Dance Classes hosted by Battalion Youth.",
-    image: "/placeholder.svg"
+    image: "/assets/dance-classes.webp"
   },
   {
     id: 7,
     title: "Children Christmas Party",
     description: "Christmas Party for underprivileged children. Dancing competition for our kids. Face painting. Jumping Castles. Father Christmas. Each child had a meal and a party pack.",
-    image: "/placeholder.svg"
+    image: "/assets/children-christmas-party.webp"
   },
   {
     id: 8,
     title: "Blood Drive",
     description: "Introduced into the community to help increase the supply. 80% First time donors. Helped our community understand the need to donate. Helped people discover their blood types.",
-    image: "/placeholder.svg"
+    image: "/assets/blood-drive.webp"
   },
   {
     id: 9,
     title: "Ballet Classes",
     description: "Teaches children posture. Mental strength and focus Builds social skills Instills confidence Teaches balance and co-ordination",
-    image: "/placeholder.svg"
+    image: "/assets/ballet-classes.webp"
   }
 ];
 
