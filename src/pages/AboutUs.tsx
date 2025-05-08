@@ -120,9 +120,9 @@ const AboutUs = () => {
           <div className="container-custom">
             <h2 className="text-3xl font-bold mb-12 text-abbaquar-purple text-center">Our Team</h2>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 divide-y-8 divide-transparent">
               {teamMembers.map((member, index) => (
-                <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all text-center">
+                <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all text-center p-2">
                   <div className="aspect-square overflow-hidden">
                     <img 
                       src={member.image} 
@@ -133,9 +133,9 @@ const AboutUs = () => {
                       height="240"
                     />
                   </div>
-                  <div className="p-3">
+                  <div className="p-4">
                     <h3 className="font-bold text-abbaquar-dark text-sm">{member.name}</h3>
-                    <p className="text-gray-600 text-xs">{member.role}</p>
+                    <p className="text-gray-600 text-xs mt-1">{member.role}</p>
                   </div>
                 </div>
               ))}
