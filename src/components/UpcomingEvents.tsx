@@ -1,4 +1,5 @@
 import React from "react";
+import { Calendar, Clock, MapPin, ArrowRight } from 'lucide-react';
 
 const events = [
   {
@@ -25,19 +26,54 @@ const events = [
 ];
 
 const UpcomingEvents = () => (
-  <section className="section-padding mb-16">
+  <section className="py-24 bg-white">
     <div className="container-custom">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-[#4E2D7A]">Upcoming Events</h2>
-        <div className="mx-auto w-24 h-1 bg-[#D72660] rounded mb-6" />
+      <div className="max-w-4xl mx-auto text-center mb-16">
+        <span className="text-[#D72660] font-semibold mb-4 block">Join Us</span>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#073366] font-serif">Upcoming Events</h2>
+        <p className="text-lg text-gray-600">
+          Join our community events and make a difference. Every event is an opportunity to connect, 
+          learn, and create positive change.
+        </p>
       </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {events.map((event, idx) => (
-          <div key={idx} className="bg-white rounded-lg shadow-lg p-6 flex flex-col h-full">
-            <h3 className="text-xl font-semibold mb-2 text-[#073366]">{event.name}</h3>
-            <div className="mb-2 text-sm text-[#D72660] font-bold">{event.date} &bull; {event.time}</div>
-            <div className="mb-2 text-sm text-gray-500">{event.location}</div>
-            <p className="text-gray-700 flex-grow">{event.description}</p>
+          <div key={idx} className="bg-gray-50 rounded-2xl p-6 hover:shadow-xl transition-all group">
+            <div className="space-y-4">
+              <div className="flex items-start justify-between">
+                <div className="bg-white rounded-2xl p-3 shadow-sm">
+                  <Calendar className="h-6 w-6 text-[#D72660]" />
+                </div>
+                <span className="text-sm font-medium text-[#D72660] bg-[#D72660]/10 px-3 py-1 rounded-full">
+                  Upcoming
+                </span>
+              </div>
+
+              <h3 className="text-xl font-semibold text-[#073366] mt-2">{event.name}</h3>
+
+              <div className="space-y-2">
+                <div className="flex items-center text-gray-600">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  <span className="text-sm">{event.date}</span>
+                </div>
+                <div className="flex items-center text-gray-600">
+                  <Clock className="h-4 w-4 mr-2" />
+                  <span className="text-sm">{event.time}</span>
+                </div>
+                <div className="flex items-center text-gray-600">
+                  <MapPin className="h-4 w-4 mr-2" />
+                  <span className="text-sm">{event.location}</span>
+                </div>
+              </div>
+
+              <p className="text-gray-600 text-sm">{event.description}</p>
+
+              <button className="mt-4 w-full bg-white text-[#073366] px-4 py-2 rounded-xl border border-gray-200 hover:border-[#073366] transition-all flex items-center justify-center group-hover:bg-[#073366] group-hover:text-white">
+                Register Now
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+              </button>
+            </div>
           </div>
         ))}
       </div>

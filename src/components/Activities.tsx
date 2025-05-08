@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 
 interface Activity {
   id: number;
@@ -58,54 +59,57 @@ const Activities = ({ showHeader = true }: ActivitiesProps) => {
   };
 
   return (
-    <section id="activities" className="section-padding mb-16">
+    <section id="activities" className="py-24 bg-gray-50">
       <div className="container-custom">
         {showHeader && (
-          <div className="text-center mb-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-[#073366]">Activities</h2>
-            <div className="mx-auto w-24 h-1 bg-[#D4A017] rounded mb-6" />
-            <p className="text-lg max-w-3xl mx-auto text-[#073366]">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <span className="text-[#D72660] font-semibold mb-4 block">Our Programs</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#073366] font-serif">Activities</h2>
+            <p className="text-lg text-gray-600">
               Join our community and discover what we offer. We provide various activities to engage, 
               educate, and empower members of our community.
             </p>
           </div>
         )}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {activities.slice(0, visibleActivities).map((activity, idx) => (
-            <div key={activity.id} className="bg-[#0A2647] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-              <div className="h-48 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {activities.slice(0, visibleActivities).map((activity) => (
+            <div key={activity.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
+              <div className="relative h-48 overflow-hidden">
                 <img 
-                  src={activity.image.replace('/lovable-uploads/', '/assets/')} 
-                  alt={(() => {
-                    switch (activity.title) {
-                      case 'Pensioners Christmas Party':
-                        return 'Elderly community members enjoying a Christmas party with food and dancing';
-                      case 'Movie Night':
-                        return 'Families and children attending a community movie night';
-                      case 'Law Clinic':
-                        return 'Pro bono law clinic event with legal advice and support';
-                      case 'Karate':
-                        return 'Children practicing karate for confidence and coordination';
-                      case 'Food Parcels':
-                        return 'Food parcels being distributed to underprivileged families';
-                      case 'Dance Classes':
-                        return 'Community dance class encouraging creativity and fitness';
-                      default:
-                        return activity.title;
-                    }
-                  })()} 
-                  className="w-full h-full object-cover transition-transform hover:scale-105"
+                  src={activity.image} 
+                  alt={activity.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   width="400"
                   height="300"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-white">{activity.title}</h3>
-                <p className="text-gray-200">{activity.description}</p>
+              <div className="p-6 relative">
+                <div className="absolute -top-10 left-6 bg-[#D72660] text-white px-4 py-2 rounded-full text-sm font-medium">
+                  Active Program
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-[#073366] mt-4">{activity.title}</h3>
+                <p className="text-gray-600 mb-4">{activity.description}</p>
+                <button className="w-full bg-gray-50 text-[#073366] px-4 py-2.5 rounded-xl border border-gray-200 hover:border-[#073366] transition-all flex items-center justify-center group-hover:bg-[#073366] group-hover:text-white">
+                  Learn More
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </button>
               </div>
             </div>
           ))}
         </div>
+
+        {visibleActivities < activities.length && (
+          <div className="text-center mt-12">
+            <button
+              onClick={loadMore}
+              className="bg-white text-[#073366] px-8 py-3 rounded-full border-2 border-[#073366] hover:bg-[#073366] hover:text-white transition-all flex items-center gap-2 mx-auto"
+            >
+              Load More Activities
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
