@@ -7,6 +7,10 @@ interface Activity {
   image: string;
 }
 
+interface ActivitiesProps {
+  showHeader?: boolean;
+}
+
 const activities: Activity[] = [
   {
     id: 1,
@@ -46,7 +50,7 @@ const activities: Activity[] = [
   }
 ];
 
-const Activities = () => {
+const Activities = ({ showHeader = true }: ActivitiesProps) => {
   const [visibleActivities, setVisibleActivities] = useState(6);
 
   const loadMore = () => {
@@ -56,14 +60,16 @@ const Activities = () => {
   return (
     <section id="activities" className="section-padding mb-16">
       <div className="container-custom">
-        <div className="text-center mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-[#073366]">Activities</h2>
-          <div className="mx-auto w-24 h-1 bg-[#D4A017] rounded mb-6" />
-          <p className="text-lg max-w-3xl mx-auto text-[#073366]">
-            Join our community and discover what we offer. We provide various activities to engage, 
-            educate, and empower members of our community.
-          </p>
-        </div>
+        {showHeader && (
+          <div className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-[#073366]">Activities</h2>
+            <div className="mx-auto w-24 h-1 bg-[#D4A017] rounded mb-6" />
+            <p className="text-lg max-w-3xl mx-auto text-[#073366]">
+              Join our community and discover what we offer. We provide various activities to engage, 
+              educate, and empower members of our community.
+            </p>
+          </div>
+        )}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {activities.slice(0, visibleActivities).map((activity, idx) => (
             <div key={activity.id} className="bg-[#0A2647] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">

@@ -18,7 +18,7 @@ const ActivitiesPage = () => {
           </div>
         </section>
 
-        <Activities />
+        <Activities showHeader={false} />
       </main>
       <Footer />
     </div>
