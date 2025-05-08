@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+
+// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './UpcomingEvents.css';
@@ -97,7 +99,7 @@ const UpcomingEvents = () => {
               centeredSlides={true}
               pagination={{ 
                 clickable: true,
-                bulletActiveClass: 'swiper-pagination-bullet-active-purple'
+                enabled: true
               }}
               className="w-full events-swiper"
             >
