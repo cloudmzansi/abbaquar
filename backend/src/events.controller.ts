@@ -1,4 +1,5 @@
-import { Controller, Get, Post, Body, Delete, HttpException, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete, HttpException, Param, UseGuards, Put } from '@nestjs/common';
+import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -17,6 +18,7 @@ export class EventsController {
   }
 
   @Post()
+  @UseGuards(JwtAuthGuard)
   addEvent(@Body() event: any) {
     try {
       const data = fs.readFileSync(EVENTS_PATH, 'utf-8');
@@ -29,7 +31,22 @@ export class EventsController {
     }
   }
 
+  @Put(':id')
+  @UseGuards(JwtAuthGuard)
+  updateEvent(@Param('id') id: string, @Body() event: any) {
+    try {
+      const data = fs.readFileSync(EVENTS_PATH, 'utf-8');
+      let events = JSON.parse(data);
+      events = events.map((e: any) => e.id === id ? { ...e, ...event } : e);
+      fs.writeFileSync(EVENTS_PATH, JSON.stringify(events, null, 2));
+      return { success: true };
+    } catch (err) {
+      throw new HttpException('Failed to update event', 500);
+    }
+  }
+
   @Delete()
+  @UseGuards(JwtAuthGuard)
   clearEvents() {
     try {
       fs.writeFileSync(EVENTS_PATH, '[]');
@@ -40,6 +57,7 @@ export class EventsController {
   }
 
   @Delete(':id')
+  @UseGuards(JwtAuthGuard)
   deleteEvent(@Param('id') id: string) {
     try {
       const data = fs.readFileSync(EVENTS_PATH, 'utf-8');

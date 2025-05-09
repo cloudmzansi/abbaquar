@@ -1,4 +1,5 @@
-import { Controller, Get, Post, Body, Delete, HttpException, UploadedFile, UseInterceptors, Req } from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete, HttpException, UploadedFile, UseInterceptors, Req, UseGuards } from '@nestjs/common';
+import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import * as fs from 'fs';
 import * as path from 'path';
 import { FileInterceptor } from '@nestjs/platform-express';
@@ -21,6 +22,7 @@ export class PhotosController {
   }
 
   @Post('upload')
+  @UseGuards(JwtAuthGuard)
   @UseInterceptors(FileInterceptor('file', { storage: multer.memoryStorage() }))
   async uploadPhoto(@UploadedFile() file: Express.Multer.File, @Req() req) {
     try {
@@ -42,6 +44,7 @@ export class PhotosController {
   }
 
   @Post()
+  @UseGuards(JwtAuthGuard)
   addPhoto(@Body() photo: any) {
     try {
       const data = fs.readFileSync(PHOTOS_PATH, 'utf-8');
@@ -55,6 +58,7 @@ export class PhotosController {
   }
 
   @Delete()
+  @UseGuards(JwtAuthGuard)
   clearPhotos() {
     try {
       fs.writeFileSync(PHOTOS_PATH, '[]');
@@ -65,6 +69,7 @@ export class PhotosController {
   }
 
   @Delete('delete')
+  @UseGuards(JwtAuthGuard)
   deletePhoto(@Body() body: { filename: string }) {
     try {
       const { filename } = body;
